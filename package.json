@@ -1,28 +1,37 @@
 {
   "name": "eslint-prettier-boilerplate-configs",
   "version": "1.0.0",
+  "private": true,
   "description": "A repo to use to quickly setup ESLint using the Prettier Formatter and AirBNB code styling in VS Code",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon ./index.js"
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
   },
   "keywords": [
     "eslint",
     "prettier"
   ],
+  "eslintConfig": {
+    "extends": "react-app"
+  },
   "author": "Ariel Holman",
   "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
   "devDependencies": {
-    "eslint": "^7.5.0",
-    "eslint-config-airbnb": "^18.2.0",
-    "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^6.11.0",
-    "eslint-plugin-import": "^2.22.0",
-    "eslint-plugin-jsx-a11y": "^6.3.1",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-react": "^7.20.5",
-    "eslint-plugin-react-hooks": "^4.0.8",
     "prettier": "^2.0.5"
   },
   "dependencies": {
@@ -30,6 +39,12 @@
     "dotenv": "^8.2.0",
     "express": "^4.14.0",
     "mysql": "^2.17.1",
-    "nodemon": "^1.18.11"
+    "nodemon": "^1.18.11",
+    "@testing-library/jest-dom": "^4.2.4",
+    "@testing-library/react": "^9.5.0",
+    "@testing-library/user-event": "^7.2.1",
+    "react": "^16.14.0",
+    "react-dom": "^16.14.0",
+    "react-scripts": "3.4.3"
   }
 }
