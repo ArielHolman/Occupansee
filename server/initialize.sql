@@ -1,31 +1,5 @@
 DROP TABLE IF EXISTS usersContact, usersPassword, users, businesses, businessUsers, businessUserContact, businessUserRole, businessContact, businessAddress, businessCapacity;
 
-CREATE TABLE users (
-  user_id INT NOT NULL AUTO_INCREMENT,
-  first_name VARCHAR(50),
-  last_name VARCHAR(50),
-  PRIMARY KEY (user_id));
-
-CREATE TABLE usersContact (
-  contact_id INT NOT NULL AUTO_INCREMENT,
-  user_id INT NOT NULL,
-  phone VARCHAR(50),
-  email VARCHAR(50),
-  PRIMARY KEY (contact_id),
-  FOREIGN KEY (user_id)
-  REFERENCES users (user_id)
-    ON DELETE CASCADE);
-
-CREATE TABLE usersPassword (
-  password_id INT NOT NULL AUTO_INCREMENT,
-  user_id INT NOT NULL,
-  password VARCHAR(50),
-  PRIMARY KEY (password_id),
-  FOREIGN KEY (user_id)
-  REFERENCES users (user_id)
-    ON DELETE CASCADE);
--- 2nd foreign key - user email
-
 CREATE TABLE businesses (
   business_id INT NOT NULL AUTO_INCREMENT,
   business_name VARCHAR(200),
@@ -101,27 +75,6 @@ CREATE TABLE businessCapacity (
   REFERENCES businesses (business_id)
     ON DELETE CASCADE);
 -- other foreign keys: business_name
-
-INSERT INTO users
-	(first_name, last_name)
-VALUES
-  ("James","Butt"),
-  ("Josephine","Motley"),
-  ("Art","Venere");
-
-INSERT INTO usersContact
-	(user_id, phone, email)
-VALUES
-  (1, "626-572-1096","james.butt@gmail.com"),
-  (2, "607-407-3716","josey.motley@aol.net"),
-  (3, "510-677-9785","art_venere@yahoo.org");
-
-INSERT INTO usersPassword
-	(user_id, password)
-VALUES
-  (1, "Password123#"),
-  (2, "pAsSwOrD456!"),
-  (3, "Pa$$W0rD789%");
 
 INSERT INTO businesses
 	(business_id, business_name)
