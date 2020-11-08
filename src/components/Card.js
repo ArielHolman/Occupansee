@@ -1,9 +1,9 @@
 import React from "react";
 
-const Card = ({ name, address}) => {
+const Card = ({ name, address, id}) => {
   return (
     <div className= "bg-light-gray dib br3 pa3 ma2 grow bw2 tc shadow-5">
-      <img alt ="logo" src={"https://source.unsplash.com/200x200/?puppies"} />
+      <img alt ="logo" src={`https://source.unsplash.com/200x200/?puppies${id}`}/>
       <div>
         <h2> {name}</h2>
         <p>{address}</p>
@@ -13,3 +13,4 @@ const Card = ({ name, address}) => {
 };
 
 export default Card;
+

@@ -1,18 +1,13 @@
 import React from "react";
 import Card from "./Card";
 
-const CardList = ({businesses}) => {
+const CardList = ({ businesses }) => {
   return (
     <div>
       {businesses.map((business, i) => {
-        return (
-          <Card
-            key={i}
-            id={businesses[i].id}
-            name={businesses[i].name}
-            address={businesses[i].address}
-          />
-        );
+        const { id, name, address } = business;
+
+        return <Card key={i} id={id} name={name} address={address} />;
       })}
     </div>
   );

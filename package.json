@@ -52,6 +52,7 @@
     "react-router": "^5.2.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
+    "react-tilt": "^0.1.4",
     "redux": "^4.0.5",
     "redux-thunk": "^2.3.0",
     "tachyons": "^4.12.0",
