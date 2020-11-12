@@ -21,6 +21,8 @@ class Home extends Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
+    const { onRouteChange, isSignedIn } = this.props;
+
     return (
       <div className="tc">
         <h1>Occupansee</h1>
@@ -52,12 +54,21 @@ class Home extends Component {
             3) See the occupancy and plan your next visit!
           </li>
         </ol>
-        <div>
-          <p className="f5 link dim gold underline pa3 pointer">
-            {" "}
-            Are you a business owner?{" "}
+        {!isSignedIn && (<div>
+          <p
+            onClick={() => onRouteChange("register")}
+            className="f5 link dim gold underline pa1 pointer"
+          >
+            Are you a business owner?
           </p>
-        </div>
+          <p
+            onClick={() => onRouteChange("signin")}
+            className="f5 link dim gold underline pa1 pointer"
+          >
+            Sign In
+          </p>
+        </div>)}
+
       </div>
     );
   }
