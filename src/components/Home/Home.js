@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import { businesses } from "../../businesses";
 import "./Home.css";
+import { Link } from "react-router-dom";
 
 class Home extends Component {
   constructor() {
@@ -21,7 +22,7 @@ class Home extends Component {
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
-    const { onRouteChange, isSignedIn } = this.props;
+    const { isSignedIn } = this.props;
 
     return (
       <div className="tc">
@@ -38,7 +39,7 @@ class Home extends Component {
               type="text"
               placeholder="Search Businesses"
             />
-            <button className="searchButton w-30 grow f4 link ph3 pv2 white bg-gold">
+            <button className="searchbutton w-30 grow f4 link ph3 pv2 white bg-gold">
               Search!
             </button>
           </div>
@@ -54,21 +55,16 @@ class Home extends Component {
             3) See the occupancy and plan your next visit!
           </li>
         </ol>
-        {!isSignedIn && (<div>
-          <p
-            onClick={() => onRouteChange("register")}
-            className="f5 link dim gold underline pa1 pointer"
-          >
-            Are you a business owner?
-          </p>
-          <p
-            onClick={() => onRouteChange("signin")}
-            className="f5 link dim gold underline pa1 pointer"
-          >
-            Sign In
-          </p>
-        </div>)}
-
+        {!isSignedIn && (
+          <div>
+            <button className="f5 link dim gold underline pa1 pointer">
+              <Link to="/register-user">Are you a business owner?</Link>
+            </button>
+            <button className="f5 link dim gold underline pa1 pointer">
+              <Link to="/signin">Sign In</Link>
+            </button>
+          </div>
+        )}
       </div>
     );
   }

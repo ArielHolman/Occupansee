@@ -1,6 +1,7 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const UserRegistration = ({ onRouteChange }) => {
+const UserRegistration = () => {
   return (
     <article className="br2 ba shadow-5 b--black-10 mv4 w-50 center">
       <main className="pa3 black-80">
@@ -98,12 +99,9 @@ const UserRegistration = ({ onRouteChange }) => {
             </div>
           </fieldset>
           <div>
-            <input
-              onClick={() => onRouteChange("signin")}
-              className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
-              type="submit"
-              value="Register"
-            />
+            <button className="f5 link dim gold underline pa1 pointer">
+              <Link to="/signin">Register</Link>
+            </button>
           </div>
         </div>
       </main>

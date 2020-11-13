@@ -1,11 +1,11 @@
 import React from "react";
 import Tilt from "react-tilt";
 import glasses from "./glasses.png";
-import "./Logo.css"
+import "./Logo.css";
 
 const Logo = () => {
   return (
-    <div style={{ marginTop:10 }}>
+    <div style={{ marginTop: 10 }}>
       <Tilt
         className="Tilt"
         options={{ max: 45 }}

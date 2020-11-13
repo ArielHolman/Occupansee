@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 const UserRegistration = ({ onRouteChange }) => {
   return (
@@ -72,12 +73,12 @@ const UserRegistration = ({ onRouteChange }) => {
             </div>
           </fieldset>
           <div>
-            <input
-              onClick={() => onRouteChange("businessRegistration")}
+            <button
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
-              value="Enter Business Information"
-            />
+            >
+              <Link to="/register-business">Enter Business Information</Link>
+            </button>
           </div>
         </div>
       </main>
