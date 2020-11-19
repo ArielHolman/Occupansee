@@ -1,9 +1,37 @@
-import React from "react";
-import { Link } from "react-router-dom";
+import React, { useState } from "react";
+import { Link, Redirect } from "react-router-dom";
+
+const mockBiz = {
+  id: 1,
+  name: "West Pecan Coffee + Beer",
+  phone: "(512)551-3471",
+  street: "100 W Pecan St.",
+  city: "Pflugerville",
+  state: "TX",
+  zip: 78660,
+  hours: "7:00 AM - 9:00 PM",
+  website: "https://westpecancoffee.com",
+  lat: 30.4403571,
+  lng: -97.6232054,
+  maxoccupancy: 100,
+  isActive: false,
+};
 
 const Signin = () => {
+  const [business, setBusiness] = useState({
+    redirect: false,
+  });
+
+  const onSignIn = () => {
+    setBusiness({
+      redirect: true,
+    });
+  };
   return (
-    <article className="br3 ba shadow-5 b--black-10 mv4 w-100 w-50-m w-25-l mw6 center">
+    <form
+      onsubmit={onSignIn}
+      className="br3 ba shadow-5 b--black-10 mv4 w-100 w-50-m w-25-l mw6 center"
+    >
       <main className="pa4 black-80">
         <div className="measure">
           <fieldset
@@ -44,8 +72,11 @@ const Signin = () => {
             <button
               className="b ph3 pv2 input-reset ba b--black bg-transparent grow pointer f6 dib"
               type="submit"
+              onClick={() => {
+                onSignIn();
+              }}
             >
-              <Link to="/dashboard">Sign In</Link>
+              Sign In
             </button>
           </div>
           <div className="lh-copy mt3">
@@ -55,7 +86,15 @@ const Signin = () => {
           </div>
         </div>
       </main>
-    </article>
+      {business.redirect && (
+        <Redirect
+          to={{
+            pathname: "/dashboard",
+            state: { mockBiz },
+          }}
+        />
+      )}
+    </form>
   );
 };
 

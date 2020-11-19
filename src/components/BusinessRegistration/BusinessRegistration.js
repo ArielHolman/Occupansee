@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const UserRegistration = () => {
   return (
-    <article className="br2 ba shadow-5 b--black-10 mv4 w-50 center">
+    <form className="br2 ba shadow-5 b--black-10 mv4 w-50 center">
       <main className="pa3 black-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -105,7 +105,7 @@ const UserRegistration = () => {
           </div>
         </div>
       </main>
-    </article>
+    </form>
   );
 };
 

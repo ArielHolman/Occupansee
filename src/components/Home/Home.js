@@ -39,7 +39,7 @@ class Home extends Component {
               type="text"
               placeholder="Search Businesses"
             />
-            <button className="searchbutton w-30 grow f4 link ph3 pv2 white bg-gold">
+            <button className="searchbutton w-30 grow f4 link ph3 pv2 white bg-gold pointer">
               Search!
             </button>
           </div>
