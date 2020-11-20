@@ -1,8 +1,6 @@
-import React from "react";
-import { Link } from "react-router-dom";
-import BusinessInfoForm from "../"
+import React from "react"
 
-const UserRegistration = () => {
+const BusinessInfoForm = () => {
   return (
     <form className="br2 ba shadow-5 b--black-10 mv4 w-50 center">
       <main className="pa3 black-80">
@@ -107,7 +105,7 @@ const UserRegistration = () => {
         </div>
       </main>
     </form>
-  );
-};
+  )
+}
 
-export default UserRegistration;
+export default BusinessInfoForm
