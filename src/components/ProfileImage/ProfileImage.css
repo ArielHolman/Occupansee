@@ -1,0 +1,42 @@
+.profile-pic {
+  max-width: 100%;
+  max-height: auto;
+  display: block;
+}
+
+/* .file-upload {
+  display: none;
+} */
+
+.pic-container {
+  border: 8px solid rgba(255, 255, 255, 0.7);
+  max-width: 10rem;
+  max-height: 10rem;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.p-image {
+  top: 167px;
+  right: 30px;
+  color: #666666;
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  margin: 1rem;
+}
+
+ .p-image:hover {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.upload-button {
+  font-size: 1.2em;
+  padding: 1rem;
+}
+
+.upload-button:hover {
+  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  color: #999;
+}
