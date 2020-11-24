@@ -66,15 +66,18 @@ const Dashboard = ({ location }) => {
             <DashboardButton buttonInfo={trackerButton} />
           </Link>
           <Link
-            to={(location) => ({
-              ...location,
+            to={(business) => ({
+              ...business,
               toggleDetails,
               pathname: "/settings",
             })}
           >
             <DashboardButton buttonInfo={settingsButton} />
           </Link>
-          <Link to="/profile">
+          <Link to={(location) => ({
+              ...location,
+              pathname: "/profile",
+            })}>
             <DashboardButton buttonInfo={profileButton} />
           </Link>
         </div>

@@ -7,7 +7,7 @@ const ProfileImage = () => {
       <div className="pic-container center">
         <img
           className="profile-pic"
-          src="https://www.ajactraining.org/wp-content/uploads/2019/09/image-placeholder.jpg"
+          src="https://nitrocdn.com/CNKIidEmUjTyxuxShKseLbFuedcNDbhI/assets/static/optimized/rev-3c0aa26/wp-content/uploads/2019/10/Screen-Shot-2019-10-14-at-11.51.29-am.jpg"
         />
       </div>
       <div className="upload-button center">

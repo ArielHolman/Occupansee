@@ -41,9 +41,9 @@ const BusinessCard = ({ business }) => {
             </div>
             <div className="mb5 mb0-ns w-100 w-20-ns center">
               <img
-                src="http://mrmrs.github.io/photos/cpu.jpg"
+                src="https://nitrocdn.com/CNKIidEmUjTyxuxShKseLbFuedcNDbhI/assets/static/optimized/rev-3c0aa26/wp-content/uploads/2019/10/Screen-Shot-2019-10-14-at-11.51.29-am.jpg"
                 className="db br-100 h7"
-                alt="Photo of a dimly lit room with a computer interface terminal."
+                alt="Barista behind the counter preparing a coffee."
               />
             </div>
           </div>

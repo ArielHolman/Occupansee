@@ -17,7 +17,6 @@ const BusinessSettings = ({ location, toggleDetails }) => {
 
   const handleChangeSwitch = (event) => {
     setState({ ...active, [event.target.name]: event.target.checked });
-    debugger;
     {
       toggleDetails;
     }
