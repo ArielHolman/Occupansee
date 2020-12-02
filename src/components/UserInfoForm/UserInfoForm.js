@@ -2,7 +2,7 @@ import React from "react";
 
 const UserInfoForm = () => {
   return (
-    <div className="mt3" style={{ textAlign: "left" }}>
+    <div className="mt3 bg-white-90" style={{ textAlign: "left" }}>
       <label className="db fw6 lh-copy f6" htmlFor="firstname">
         First Name
       </label>

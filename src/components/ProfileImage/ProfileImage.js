@@ -19,3 +19,5 @@ const ProfileImage = () => {
 };
 
 export default ProfileImage;
+
+// className="db h4 w-70"

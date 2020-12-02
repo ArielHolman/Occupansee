@@ -1,0 +1,36 @@
+.occupancy-title {
+  margin-bottom: 0px;
+  padding-bottom: 20px;
+  max-width: 100px;
+  text-align: center;
+}
+
+.occupancy-nums {
+  margin-left: 10px;
+  margin-bottom: 0px;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  max-width: 90px;
+  height: 90px;
+  text-align: center;
+  padding-top: 20px;
+}
+
+.occupancy-table{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 0px 100px;
+  padding:20px;
+  width:5rem;
+}
+
+.occupancy-table-container{
+  width:6rem;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  margin-right: 30px;
+}

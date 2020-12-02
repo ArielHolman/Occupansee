@@ -1,0 +1,68 @@
+@keyframes fadein {
+  0% {
+    opacity: 0;
+  }
+  40% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+.main {
+  display: flex;
+}
+
+.chart {
+  position: relative;
+  margin: 5px;
+  font-weight: 900;
+}
+.chart__figure {
+  display: flex;
+  justify-content: space-between;
+  height: 360px;
+}
+@media screen and (max-width: 540px) {
+  .chart__figure {
+    flex-direction: column;
+    height: auto;
+  }
+}
+.chart__canvas {
+  margin: auto;
+}
+
+.chart span {
+  font-size: 16px;
+  line-height: 24px;
+  font-family: "Montserrat", sans-serif;
+  color: #334466;
+}
+.chart__value {
+  /* display: grid; */
+  position: absolute;
+  top: 0;
+  left: 40px;
+  height: calc(40px + 160px);
+  width: 40px;
+  animation: fadein 1400ms;
+}
+@media screen and (max-width: 540px) {
+  .chart__value {
+    left: 0;
+    right: 0;
+    width: 100%;
+  }
+}
+.chart__value p {
+  font-size: 100px;
+  margin: 110px 35px;
+  padding-left: 6px;
+  font-family: "Barlow Condensed", sans-serif;
+  color: #01713c;
+  background-color: #fff;
+}

@@ -1,0 +1,30 @@
+.large-button {
+  padding:3.5rem;
+  margin: .5rem;
+  border: none;
+  background-color: #e5e5e5;
+  font-size: 2rem;
+  border-radius: 50%;
+  line-height: 0pt;
+  font-weight: bolder;
+}
+
+.small-button {
+  font-weight: bolder;
+  font-size: 1.2rem;
+  padding:2rem;
+  width: 80%;
+  margin:.5rem;
+  border: none;
+  background-color: #e5e5e5;
+  border-radius: 50%;
+  line-height: 0pt;
+  height:100%;
+}
+
+.round-button-container {
+  max-width: 200px;
+  display: flex;
+  justify-content: center;
+  margin:.5rem;
+}

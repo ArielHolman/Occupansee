@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const BusinessInfoForm = () => {
   return (
-    <div className="mt3" style={{ textAlign: "left" }}>
+    <div className="mt3 bg-white-90" style={{ textAlign: "left" }}>
       <label className="db fw6 lh-copy f6" htmlFor="businessname">
         Business Name
       </label>

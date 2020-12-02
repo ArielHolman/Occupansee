@@ -1,3 +1,18 @@
 .search {
   width: 50vw;
+  background-color: rgba(92, 92, 92, 0.527);
+}
+
+.searchbutton {
+  background-color: #16A3B8;
+}
+
+.home {
+  background-image: url(https://images.unsplash.com/photo-1603246755788-4f7d9789a003?ixlib=rb-1.2.1&ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&auto=format&fit=crop&w=2100&q=80);
+  background-size: 98%;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: auto;
+  width: 100%;
+  position: relative;
 }

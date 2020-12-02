@@ -4,11 +4,13 @@ import { Link } from "react-router-dom";
 
 const UserRegistration = () => {
   return (
-    <form className="br2 ba shadow-5 b--black-10 mv4 w-50 center">
+    <form className="br2 ba shadow-5 b--black-10 mv3 w-50 center bg-white-90">
       <main className="pa3 black-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
-            <legend className="f4 fw6 ph0 mh0 center">Register Today!</legend>
+            <legend className="f4 fw6 ph0 mh0 center">
+              Register Your Today!
+            </legend>
             <p className="f5">
               {
                 "Allow your customers to search for your business, see your current occupancy, and feel safe planning their next visit!"

@@ -43,16 +43,21 @@ const Dashboard = ({ location }) => {
 
   return (
     <div
+      className="dashboard bg-white-90 mh6 pt3-ns"
       style={{
         display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
+        flexDirection: "column",
+        alignItems: "center",
       }}
     >
+      <div className="flex flex-column justify-start w-90">
+        <h2 className="f3">Hello, Username</h2>
+        <p>Keep your customers up to date by tracking your occupancy at the door!</p>
+      </div>
       <section className="mw7 avenir">
-        <BusinessCard business={business} />
+        <BusinessCard />
         <div
-          className="pt4"
+          className="pt2"
           style={{
             display: "flex",
             justifyContent: "center",
@@ -74,10 +79,12 @@ const Dashboard = ({ location }) => {
           >
             <DashboardButton buttonInfo={settingsButton} />
           </Link>
-          <Link to={(location) => ({
+          <Link
+            to={(location) => ({
               ...location,
               pathname: "/profile",
-            })}>
+            })}
+          >
             <DashboardButton buttonInfo={profileButton} />
           </Link>
         </div>

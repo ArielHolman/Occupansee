@@ -34,7 +34,7 @@ const BusinessSettings = ({ location, toggleDetails }) => {
   const { mockBiz } = location.state;
 
   return (
-    <div>
+    <div className=" bg-white-90">
       <BusinessCard business={mockBiz} />
       <CardContent>
         <CardActions

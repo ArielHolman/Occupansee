@@ -1,53 +1,37 @@
 import React from "react";
-import ProfileImage from "../ProfileImage/ProfileImage";
-import Chart from "chart.js"
-import OccupancyChart from "../OccupancyChart/OccupancyChart"
+import { BusinessContext } from "../BusinessContextProvider/BusinessContextProvider";
 
-const ProfileCard = ({ location }) => {
+const ProfileCard = () => {
   return (
-    <div>
-      <div
-        style={{
-          display: "flex",
-          flexDirection: "row",
-          justifyContent: "center",
-          alignItems: "center",
-          margin: 30,
-        }}
-      >
-        <div>
-          <h2
-            className="f3 fw1 baskerville mt0 lh-title"
-            style={{ marginBottom: 0 }}
-          >
-            Business Name Goes Here
-            {/* {location.name} */}
-          </h2>
-          <p className="f6  mv0 lh-copy">
-            2020 Business Address St.
-            {/* {location.street} */}
-          </p>
-          <p className="f6  mv0 lh-copy">
-            Austin, TX 78660
-            {/* {location.city}, {location.state} {location.zip}*/}
-          </p>
-          <p className="f6  mv0 lh-copy">
-            512-888-0000
-            {/* {location.phone}*/}
-          </p>
-          <p className="f6  mv0 lh-copy">
-            www.bizwebsite.com
-            {/* {location.website}*/}
-          </p>
-        </div>
-        <div>
-          <ProfileImage />
-        </div>
-      </div>
-      <div>
-        <OccupancyChart />
-      </div>
-    </div>
+    <BusinessContext.Consumer>
+      {(context) => (
+        <React.Fragment>
+          <div className="flex flex-column">
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
+                marginTop: "1rem",
+              }}
+            >
+              <div style={{ marginRight: "3rem" }}>
+                <h2 className="f2 fw1 baskerville mt0 lh-title">
+                  {context.state.businessname}
+                </h2>
+                <p className="f6  mv0 lh-copy">{context.state.street}</p>
+                <p className="f6  mv0 lh-copy mb2-l">
+                  {context.state.city}, {context.state.state}{" "}{context.state.zip}
+                </p>
+                <p className="f6  mv0 lh-copy mb2-l">{context.state.phone}</p>
+                <p className="f6  mv0 lh-copy">{context.state.website}</p>
+              </div>
+            </div>
+          </div>
+        </React.Fragment>
+      )}
+    </BusinessContext.Consumer>
   );
 };
 

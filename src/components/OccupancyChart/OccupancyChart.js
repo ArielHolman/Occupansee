@@ -1,39 +1,73 @@
 import React, { Component } from "react";
 import Chart from "chart.js";
-// import classes from "./LineGraph.module.css";
+import "./OccupancyChart.css";
 
-export default class LineGraph extends Component {
+export default class OccupancyChart extends Component {
   chartRef = React.createRef();
 
-  componentDidMount() {
-    const myChartRef = this.chartRef.current.getContext("2d");
+  componentDidMount = () => {
+    const currentOccupancy = 95;
+    const maxOccupancy = 150;
+    const percent = currentOccupancy/maxOccupancy*100;
+    const color = "#01713c";
+    const canvas = "chartCanvas";
+    const container = "chartContainer";
 
-    new Chart(myChartRef, {
-      type: "doughnut",
+    const percentValue = percent.toFixed(0); // Sets the single percentage value to a whole number
+    const colorGreen = color, // Sets the chart color
+      animationTime = "1400"; // Sets speed/duration of the animation
+
+    let chartCanvas = document.getElementById(canvas), // Sets canvas element by ID
+      chartContainer = document.getElementById(container), // Sets container element ID
+      divElement = document.createElement("div"), // Create element to hold and show percentage value in the center on the chart
+      domString =
+        '<div class="chart__value"><p>' + percentValue + "%</p></div>"; // String holding markup for above created element
+
+    // Create a new Chart object
+    const doughnutChart = new Chart(chartCanvas, {
+      type: "doughnut", // Set the chart to be a doughnut chart type
       data: {
-        //Bring in data
-        labels: ["Current Occupancy", "Max Occupancy"],
         datasets: [
           {
-            label: "Occupancy",
-            data: [55, 10],
-            backgroundColor: [
-              "rgba(255, 99, 132, 0.2)",
-              "rgba(54, 162, 235, 0.2)",
-            ],
-            borderColor: ["rgba(255, 99, 132, 1)", "rgba(54, 162, 235, 1)"],
+            data: [percentValue, 100 - percentValue], // Set the value shown in the chart as a percentage (out of 100)
+            backgroundColor: [colorGreen], // The background color of the filled chart
+            borderWidth: 0, // Width of border around the chart
           },
         ],
       },
+
       options: {
-        //Customize chart options
+        cutoutPercentage: 75, // The percentage of the middle cut out of the chart
+        responsive: false, // Set the chart to not be responsive
+        tooltips: {
+          enabled: false, // Hide tooltips
+        },
       },
     });
-  }
+
+    Chart.defaults.global.animation.duration = animationTime; // Set the animation duration
+
+    divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
+    chartContainer.appendChild(divElement.firstChild); // Append the divElement within the chartContainer as it's child
+  };
   render() {
     return (
       <div>
-        <canvas id="myChart" ref={this.chartRef} />
+        <main className="main">
+          <section className="chart" id="chartContainer">
+            <figure className="chart__figure">
+              <canvas
+                className="chart__canvas"
+                id="chartCanvas"
+                width="360"
+                height="360"
+                aria-label="Example doughnut chart showing data as a percentage"
+                role="img"
+                ref={this.chartRef}
+              ></canvas>
+            </figure>
+          </section>
+        </main>
       </div>
     );
   }
