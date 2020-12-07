@@ -14,6 +14,7 @@ const BusinessProfile = () => {
           justifyContent: "center",
           alignItems: "center",
           margin:2,
+          paddingBottom:25,
         }}>
         <ProfileCard />
         <ProfileImage />
@@ -25,6 +26,7 @@ const BusinessProfile = () => {
           justifyContent: "space-evenly",
           alignItems: "center",
           margin: 2,
+          paddingBottom:25,
         }}
       >
         <OccupancyChart />

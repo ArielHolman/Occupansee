@@ -8,7 +8,7 @@ const BusinessInfoForm = () => {
         Business Name
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
         type="text"
         name="businessname"
         id="businessname"
@@ -19,7 +19,7 @@ const BusinessInfoForm = () => {
         Street Address
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
         type="text"
         name="address"
         id="address"
@@ -30,7 +30,7 @@ const BusinessInfoForm = () => {
         City
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
         type="text"
         name="city"
         id="city"
@@ -41,7 +41,7 @@ const BusinessInfoForm = () => {
         State
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
         type="text"
         name="state"
         id="state"
@@ -52,7 +52,7 @@ const BusinessInfoForm = () => {
         Zip Code
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
         type="number"
         id="zip"
         name="zip"
@@ -64,7 +64,7 @@ const BusinessInfoForm = () => {
         Max Capacity
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
         type="number"
         id="maxcapacity"
         name="maxcapacity"
@@ -76,7 +76,7 @@ const BusinessInfoForm = () => {
         Allowed Capacity Restriction
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black hover-white w-100"
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
         type="number"
         id="restrictions"
         name="restrictions"

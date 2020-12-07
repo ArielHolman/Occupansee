@@ -4,11 +4,11 @@ import CardActions from "@material-ui/core/CardActions";
 import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Switch from "@material-ui/core/Switch";
+import { Link } from "react-router-dom";
 
-const BusinessSettings = ({ location, toggleDetails }) => {
+const BusinessSettings = ({ toggleDetails }) => {
   const [active, setState] = React.useState({
-    isActive: true,
-    isNotActive: false,
+    isActive: null,
   });
 
   const [notification, setNotification] = React.useState({
@@ -31,19 +31,25 @@ const BusinessSettings = ({ location, toggleDetails }) => {
     }
   };
 
-  const { mockBiz } = location.state;
-
   return (
     <div className=" bg-white-90">
-      <BusinessCard business={mockBiz} />
-      <CardContent>
+      <BusinessCard />
+      <CardContent
+        style={{
+          paddingLeft: 130,
+          paddingRight: 82,
+          display: "flex",
+          justifyContent:"center",
+          flexDirection:"column",
+        }}
+      >
         <CardActions
           style={{
             display: "flex",
             justifyContent: "space-between",
             marginTop: 25,
-            marginLeft: 365,
-            marginRight: 450,
+            marginLeft: 248,
+            marginRight: 325,
           }}
         >
           <Typography component="h2" style={{ fontWeight: "bold" }}>
@@ -54,12 +60,23 @@ const BusinessSettings = ({ location, toggleDetails }) => {
             onChange={handleChangeSwitch}
             name="isActive"
             inputProps={{ "aria-label": "primary checkbox" }}
-            style={{ color: "#16AA74"}}
+            style={{ color: "#16AA74" }}
           />
         </CardActions>
         <Typography style={{ color: "red", textAlign: "center" }}>
           {notification.active}
         </Typography>
+        <div className="flex justify-end mv4"
+        style={{ marginRight:325}}>
+          <button
+            type="button"
+            className="btn btn-info button-format pointer"
+          >
+            <Link style={{ color: "white" }} to="/signin">
+              Save Changes
+            </Link>
+          </button>
+        </div>
       </CardContent>
     </div>
   );

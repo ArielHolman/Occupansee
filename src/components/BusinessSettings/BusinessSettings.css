@@ -40,10 +40,9 @@ label:active:after {
 	width: 130px;
 }
 
-// centering
-body {
+/* body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	height: 100vh;
-}
+} */

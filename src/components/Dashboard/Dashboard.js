@@ -3,11 +3,13 @@ import "./Dashboard.css";
 import { Link } from "react-router-dom";
 import BusinessCard from "../BusinessCard/BusinessCard";
 import DashboardButton from "../DashboardButton/DashboardButton";
+import { BusinessOwnerContext } from "../BusinessOwnerContextProvider/BusinessOwnerContextProvider";
+import { BusinessContext } from "../BusinessContextProvider/BusinessContextProvider";
 
-const Dashboard = ({ location }) => {
-  const { mockBiz } = location.state;
+const Dashboard = () => {
+  // const { mockBiz } = location.state;
 
-  const [business, setBusiness] = useState({ ...mockBiz });
+  // const [business, setBusiness] = useState({ ...mockBiz });
 
   const toggleDetails = () => {
     const { isActive } = business;
@@ -42,54 +44,65 @@ const Dashboard = ({ location }) => {
   };
 
   return (
-    <div
-      className="dashboard bg-white-90 mh6 pt3-ns"
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-      }}
-    >
-      <div className="flex flex-column justify-start w-90">
-        <h2 className="f3">Hello, Username</h2>
-        <p>Keep your customers up to date by tracking your occupancy at the door!</p>
-      </div>
-      <section className="mw7 avenir">
-        <BusinessCard />
-        <div
-          className="pt2"
-          style={{
-            display: "flex",
-            justifyContent: "center",
-            flexWrap: "wrap",
-          }}
-        >
-          <Link to="/edit">
-            <DashboardButton buttonInfo={editButton} />
-          </Link>
-          <Link to="/tracker">
-            <DashboardButton buttonInfo={trackerButton} />
-          </Link>
-          <Link
-            to={(business) => ({
-              ...business,
-              toggleDetails,
-              pathname: "/settings",
-            })}
+    <BusinessContext.Consumer>
+      {/* <BusinessOwnerContext.Consumer> */}
+      {(context) => (
+        <React.Fragment>
+          <div
+            className="dashboard bg-white-90 mh6 pt3-ns"
+            style={{
+              display: "flex",
+              flexDirection: "column",
+              alignItems: "center",
+            }}
           >
-            <DashboardButton buttonInfo={settingsButton} />
-          </Link>
-          <Link
-            to={(location) => ({
-              ...location,
-              pathname: "/profile",
-            })}
-          >
-            <DashboardButton buttonInfo={profileButton} />
-          </Link>
-        </div>
-      </section>
-    </div>
+            <div className="flex flex-column justify-start w-75">
+              <h2 className="f3">Hello, {context.state.firstname}</h2>
+              <p>
+                Keep your customers up to date by tracking your occupancy at the
+                door!
+              </p>
+            </div>
+            <section className="mw7 avenir pb2">
+              <BusinessCard />
+              <div
+                className="pt2"
+                style={{
+                  display: "flex",
+                  justifyContent: "center",
+                  flexWrap: "wrap",
+                }}
+              >
+                <Link to="/edit">
+                  <DashboardButton buttonInfo={editButton} />
+                </Link>
+                <Link to="/tracker">
+                  <DashboardButton buttonInfo={trackerButton} />
+                </Link>
+                <Link
+                  to={(business) => ({
+                    ...business,
+                    toggleDetails,
+                    pathname: "/settings",
+                  })}
+                >
+                  <DashboardButton buttonInfo={settingsButton} />
+                </Link>
+                <Link
+                  to={(location) => ({
+                    ...location,
+                    pathname: "/profile",
+                  })}
+                >
+                  <DashboardButton buttonInfo={profileButton} />
+                </Link>
+              </div>
+            </section>
+          </div>
+        </React.Fragment>
+      )}
+      {/* </BusinessOwnerContext.Consumer> */}
+    </BusinessContext.Consumer>
   );
 };
 

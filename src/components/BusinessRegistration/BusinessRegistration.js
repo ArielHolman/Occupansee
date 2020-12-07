@@ -19,8 +19,13 @@ const BusinessRegistration = () => {
             <BusinessInfoForm />
           </fieldset>
           <div className="flex justify-end">
-            <button className="f5 link dim gold underline pa1 pointer">
-              <Link to="/signin">Register</Link>
+            <button
+              type="button"
+              className="btn btn-info button-format pointer mr0"
+            >
+              <Link style={{ color: "white" }} to="/signin">
+                Register
+              </Link>
             </button>
           </div>
         </div>

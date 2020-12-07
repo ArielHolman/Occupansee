@@ -4,18 +4,23 @@ import { BusinessContext } from "../BusinessContextProvider/BusinessContextProvi
 
 const BusinessCard = () => {
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "row",
-        justifyContent: "center",
-      }}
-    >
-      <section className="mw7 avenir biz-card">
-        <p className="center bg-green pa2 b ma0">Active</p>
-        <BusinessContext.Consumer>
-          {(context) => (
-            <React.Fragment>
+    <BusinessContext.Consumer>
+      {(context) => (
+        <React.Fragment>
+          <div
+            style={{
+              display: "flex",
+              flexDirection: "row",
+              justifyContent: "center",
+            }}
+          >
+            <section className="mw7 avenir biz-card">
+              {/* <p
+                onChange={context.activityChange}
+                className="center pa2 b ma0"
+              >
+                Active
+              </p> */}
               <article className="bt bb b--black-10 pv2 ph5">
                 <div className="flex flex-row-ns">
                   <div className="w-100 w-70-ns pl3-ns">
@@ -49,11 +54,11 @@ const BusinessCard = () => {
                   </div>
                 </div>
               </article>
-            </React.Fragment>
-          )}
-        </BusinessContext.Consumer>
-      </section>
-    </div>
+            </section>
+          </div>
+        </React.Fragment>
+      )}
+    </BusinessContext.Consumer>
   );
 };
 export default BusinessCard;
