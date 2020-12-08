@@ -1,7 +1,7 @@
 const express = require("express");
 const bodyParser = require("body-parser");
 const businessOwnersRouter = require("./routes/businessOwners");
-// const businessesRouter = require("./routes/businesses");
+const businessesRouter = require("./routes/businesses");
 require("dotenv").config();
 var cors = require("cors");
 
@@ -9,12 +9,7 @@ const app = express();
 const port = process.env.PORT || 4010;
 
 app.use(bodyParser.json());
-app.use("/", cors(corsOptions), businessOwnersRouter);
-// app.use("/businesses", businessesRouter);
-
-// app.get("/", (req, res) => {
-//   res.send("Welcome to my Occupansee server!");
-// });
+app.use("/", cors(corsOptions), businessOwnersRouter, businessesRouter);
 
 var corsOptions = {
   origin: "http://localhost:3000",

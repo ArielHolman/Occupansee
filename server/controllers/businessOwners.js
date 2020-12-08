@@ -2,6 +2,7 @@ const mysql = require("mysql");
 const pool = require("../sql/connection");
 const { handleSQLError } = require("../sql/error");
 
+// FOR ADMIN USE ONLY
 const getAllBusinessOwners = (req, res) => {
   let sql = "SELECT * FROM businessowners";
   sql = mysql.format(sql, []);

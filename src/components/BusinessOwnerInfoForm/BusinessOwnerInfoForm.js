@@ -1,7 +1,6 @@
 import { FormatLineSpacingTwoTone } from "@material-ui/icons";
 import { json } from "body-parser";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
 
 const BusinessOwnerInfoForm = () => {
   const [businessOwner, setBusinessOwner] = useState({
@@ -40,7 +39,7 @@ const BusinessOwnerInfoForm = () => {
       style={{ textAlign: "left" }}
       onSubmit={handleSubmit}
     >
-      <label className="db fw6 lh-copy f6" htmlFor="firstname">
+      <label className="db fw6 lh-copy f6" htmlFor="firstName">
         First Name
       </label>
       <input
