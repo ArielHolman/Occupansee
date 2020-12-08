@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 const BusinessRegistration = () => {
   return (
-    <form className="br2 ba shadow-5 b--black-10 mv4 w-50 center bg-white-90">
+    <div className="br2 ba shadow-5 b--black-10 mv4 w-50 center bg-white-90">
       <main className="pa3 black-80">
         <div className="measure">
           <fieldset id="sign_up" className="ba b--transparent ph0 mh0">
@@ -18,19 +18,9 @@ const BusinessRegistration = () => {
             </p>
             <BusinessInfoForm />
           </fieldset>
-          <div className="flex justify-end">
-            <button
-              type="button"
-              className="btn btn-info button-format pointer mr0"
-            >
-              <Link style={{ color: "white" }} to="/signin">
-                Register
-              </Link>
-            </button>
-          </div>
         </div>
       </main>
-    </form>
+    </div>
   );
 };
 
