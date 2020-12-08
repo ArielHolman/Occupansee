@@ -19,7 +19,7 @@ class Home extends Component {
 
   render() {
     const filteredBusinesses = this.state.businesses.filter((businesses) => {
-      return businesses.name
+      return businesses.businessName
         .toLowerCase()
         .includes(this.state.searchfield.toLowerCase());
     });
@@ -53,18 +53,18 @@ class Home extends Component {
               </ul>
               {!context.state.isSignedIn && (
                 <div className="ma3 pb3-l">
-                  <a className="f6 underline link pa1 pointer">
+                  <span className="f6 underline link pa1 pointer">
                     <Link to="/register-business-owner" className="link-font">
                       Register your business TODAY!
                     </Link>
-                  </a>
+                  </span>
                   <br />
-                  <a className="link-font link f6 underline pa1 pointer">
+                  <span className="link-font link f6 underline pa1 pointer">
                     Already have an account?{" "}
                     <Link to="/signin" className="link-font">
                       Sign In
                     </Link>
-                  </a>
+                  </span>
                 </div>
               )}
             </div>

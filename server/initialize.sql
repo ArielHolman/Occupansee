@@ -6,7 +6,7 @@ CREATE TABLE businessowners (
   lastName VARCHAR(150) NOT NULL,
   businessOwnerPhone VARCHAR(150),
   email VARCHAR(150) NOT NULL,
-  password VARCHAR(50) NOT NULL,
+  password VARCHAR(150) NOT NULL,
   PRIMARY KEY (businessOwnerId)
 );
 

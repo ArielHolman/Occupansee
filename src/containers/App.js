@@ -8,10 +8,11 @@ import Footer from "../components/Footer/Footer";
 import BusinessOwnerContextProvider from "../components/BusinessOwnerContextProvider/BusinessOwnerContextProvider";
 
 class App extends Component {
+
   render() {
     return (
       <BusinessContextProvider>
-        <BusinessOwnerContextProvider>
+        <BusinessOwnerContextProvider >
           <BrowserRouter>
             <Navigation />
             <Router />

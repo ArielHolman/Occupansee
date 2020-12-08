@@ -10,7 +10,7 @@ export const businesses = [
     website: "https://westpecancoffee.com",
     maxOccupancy: 100,
     allowedOccupancyRestriction: 100,
-    profileImage:"",
+    profileImage: "",
     active: false,
   },
   {
@@ -24,7 +24,7 @@ export const businesses = [
     website: "https://www.pokeworks.com",
     maxOccupancy: 150,
     allowedOccupancyRestriction: 75,
-    profileImage:"",
+    profileImage: "",
     active: false,
   },
   {
@@ -38,7 +38,7 @@ export const businesses = [
     website: "http://www.bellasalonaustin.com",
     maxOccupancy: 190,
     allowedOccupancyRestriction: 50,
-    profileImage:"",
+    profileImage: "",
     active: false,
   },
   {
@@ -52,7 +52,7 @@ export const businesses = [
     website: "https://www.urbanaxes.com/austin",
     maxOccupancy: 125,
     allowedOccupancyRestriction: 25,
-    profileImage:"",
+    profileImage: "",
     active: false,
   },
   {
@@ -66,7 +66,7 @@ export const businesses = [
     website: "http://womenandtheirwork.org",
     maxOccupancy: 250,
     allowedOccupancyRestriction: 0,
-    profileImage:"",
+    profileImage: "",
     active: false,
   },
 ];
