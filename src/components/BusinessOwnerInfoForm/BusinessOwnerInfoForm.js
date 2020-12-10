@@ -28,7 +28,7 @@ const BusinessOwnerInfoForm = () => {
     });
     const result = await res.text();
     console.log("Here I am:", result);
-    window.location.assign("/register-business");
+    // window.location.assign("/register-business");
   };
 
   return (

@@ -11,10 +11,10 @@ const Signin = () => {
     email: "",
     password: "",
   });
-  const [redirectToDash, setRedirectToDash] = useState(false);
   const [errMsg, setErrMsg] = useState("");
   const { updateBusinessInfo } = useContext(BusinessContext);
   const { updateBusinessOwner } = useContext(BusinessOwnerContext);
+  const [redirectToDash, setRedirectToDash] = useState(false);
 
   const onSignIn = async (e) => {
     e.preventDefault();
@@ -47,9 +47,11 @@ const Signin = () => {
       console.log(err);
     }
   };
+
   if (redirectToDash) {
     return <Redirect to="/dashboard" />;
   }
+
   const handleTextChange = (e) => {
     const creds = { ...credentials };
     creds[e.target.id] = e.target.value;

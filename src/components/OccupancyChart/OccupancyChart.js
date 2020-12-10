@@ -16,12 +16,13 @@ const OccupancyChart = ({ total }) => {
     const percentValue = percent.toFixed(0); // Sets the single percentage value to a whole number
     const colorGreen = color, // Sets the chart color
       animationTime = "1400"; // Sets speed/duration of the animation
-
     let chartCanvas = document.getElementById(canvas), // Sets canvas element by ID
       chartContainer = document.getElementById(container), // Sets container element ID
       divElement = document.createElement("div"), // Create element to hold and show percentage value in the center on the chart
       domString =
-        '<div class="chart__value"><p>' + percentValue + "%</p></div>"; // String holding markup for above created element
+        '<div id="MyCoolDiv" class="chart__value"><p>' +
+        percentValue +
+        "%</p></div>"; // String holding markup for above created element
 
     // Create a new Chart object
     const doughnutChart = new Chart(chartCanvas, {
@@ -47,15 +48,19 @@ const OccupancyChart = ({ total }) => {
 
     Chart.defaults.global.animation.duration = animationTime; // Set the animation duration
 
-    divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
-    chartContainer.appendChild(divElement.firstChild); // Append the divElement within the chartContainer as it's child
+    // const onChange = () => {
+    //   chartContainer.removeChild(myCoolDiv);
+    //   //  chartContainer.appendChild(myCoolDiv);
+    // };
 
-    let domString2 = '<div class="chart__value"><p>' + percentValue + "%</p></div>"; // String holding markup for above created element
-    divElement.innerHTML = domString2
-    chartContainer.appendChild(divElement.firstChild);
-    let parentDiv = domString2.parentNode
-    console.log(parentDiv)
-    parentDiv.replaceChild(domString, domString2);
+    // Original case
+    divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
+    chartContainer.appendChild(divElement.lastChild); // Append the divElement within the chartContainer as it's child
+    console.log(currentOccupancy);
+    console.log(total);
+    let myCoolDiv = document.getElementById("MyCoolDiv");
+    console.log('mydiv', myCoolDiv)
+    // divElement.replaceChild(myCoolDiv, divElement.firstElementChild);
   });
 
   return (

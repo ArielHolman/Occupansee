@@ -14,12 +14,6 @@ const BusinessCard = () => {
       }}
     >
       <section className="mw7 avenir biz-card">
-        {/* <p
-                onChange={context.activityChange}
-                className="center pa2 b ma0"
-              >
-                Active
-              </p> */}
         <article className="bt bb b--black-10 pv2 ph5">
           <div className="flex flex-row-ns">
             <div className="w-100 w-70-ns pl3-ns">

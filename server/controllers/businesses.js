@@ -15,6 +15,7 @@ const getAllBusinesses = (req, res) => {
 
 const createBusiness = (req, res) => {
   const {
+    ownerId,
     businessName,
     streetAddress,
     city,
@@ -26,8 +27,9 @@ const createBusiness = (req, res) => {
     allowedOccupancyRestriction,
   } = req.body;
   let sql =
-    "INSERT INTO businesses (businessName, streetAddress, city, state, zipcode, website, businessPhone, maxOccupancy, allowedOccupancyRestriction) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO businesses (ownerId, businessName, streetAddress, city, state, zipcode, website, businessPhone, maxOccupancy, allowedOccupancyRestriction) VALUES (?,?, ?, ?, ?, ?, ?, ?, ?, ?)";
   sql = mysql.format(sql, [
+    ownerId,
     businessName,
     streetAddress,
     city,
