@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import { BusinessContext } from "../BusinessContextProvider/BusinessContextProvider";
 
-const BusinessInfoForm = () => {
+const BusinessInfoEditForm = () => {
   const [business, setBusiness] = useState({
     businessName: "",
     streetAddress: "",
@@ -11,19 +12,23 @@ const BusinessInfoForm = () => {
     businessPhone: "",
     maxOccupancy: "",
     allowedOccupancyRestriction: "",
+    profileImage: "",
   });
+  const { businessInfo } = useContext(BusinessContext);
 
   const handleTextChange = (e) => {
-    const newBusiness = { ...business };
-    newBusiness[e.target.id] = e.target.value;
-    setBusiness(newBusiness);
+    const updateBusiness = { ...business };
+    updateBusiness[e.target.id] = e.target.value;
+    setBusiness(updateBusiness);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = { ...business };
-    const res = await fetch("http://localhost:4010/createBusiness", {
-      method: "POST",
+    const businessId = businessInfo.businessId
+    console.log('BIZ ID', businessId)
+    const res = await fetch("http://localhost:4010/:businessId", {
+      method: "PUT",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json",
@@ -31,8 +36,8 @@ const BusinessInfoForm = () => {
       body: JSON.stringify(payload),
     });
     const result = await res.text();
-    console.log("Here I am:", result);
-    window.location.assign("/signin");
+    console.log("Put Request", result);
+    window.location.assign("/dashboard");
   };
 
   return (
@@ -117,7 +122,7 @@ const BusinessInfoForm = () => {
         onChange={handleTextChange}
         name="website"
         id="website"
-        placeholder="Example: www.examples.com"
+        placeholder="Example: TX"
         style={{ marginBottom: 15 }}
       />
       <label className="db fw6 lh-copy f6" htmlFor="businessPhone">
@@ -169,13 +174,12 @@ const BusinessInfoForm = () => {
         <button
           type="submit"
           className="btn btn-info button-format pointer mr0"
-          id="business-info-button"
         >
-          Create Business Information
+          Update Business Information
         </button>
       </div>
     </form>
   );
 };
 
-export default BusinessInfoForm;
+export default BusinessInfoEditForm;

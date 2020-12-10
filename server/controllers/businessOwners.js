@@ -31,31 +31,21 @@ const getSignIn = (req, res) => {
     if (!rows.length) return res.status(404).send("No matching users");
 
     const hash = rows[0].password;
-    console.log("password", password, "hash", hash);
     bcrypt.compare(password, hash).then((result) => {
-      console.log(result);
       if (!result) return res.status(400).send("Invalid password");
       const data = { ...rows[0]};
+
       data.password = "REDACTED";
 
       const token = jwt.sign(data, "secret");
       res.status(200).json({
         msg: "Login successful",
         token,
+        data:{...data},
       });
     });
   });
 };
-
-// const getBusinessOwnerById = (req, res) => {
-//   let sql = 'SELECT * FROM businessowners WHERE id = ?';
-//   sql = mysql.format(sql, [req.params.id]);
-
-//   pool.query(sql, (err, rows) => {
-//     if (err) return handleSQLError(res, err);
-//     return res.json(rows);
-//   });
-// };
 
 const createBusinessOwner = (req, res) => {
   const { firstName, lastName, businessOwnerPhone, email, password } = req.body;
@@ -81,5 +71,4 @@ module.exports = {
   getAllBusinessOwners,
   createBusinessOwner,
   getSignIn,
-  // getBusinessOwnerById,
 };

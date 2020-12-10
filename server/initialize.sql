@@ -12,6 +12,7 @@ CREATE TABLE businessowners (
 
 CREATE TABLE businesses (
   businessId INT NOT NULL AUTO_INCREMENT,
+  ownerId INT,
   businessName VARCHAR(150) NOT NULL,
   streetAddress VARCHAR(150) NOT NULL,
   city VARCHAR(150) NOT NULL,
@@ -22,5 +23,6 @@ CREATE TABLE businesses (
   maxOccupancy VARCHAR(150) NOT NULL,
   allowedOccupancyRestriction VARCHAR(150) NOT NULL,
   profileImage VARCHAR(250),
-  PRIMARY KEY (businessId)
+  PRIMARY KEY (businessId),
+  FOREIGN KEY (ownerId) REFERENCES businessowners (businessOwnerId) ON DELETE CASCADE
 );

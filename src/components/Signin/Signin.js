@@ -1,8 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import "./Signin.css";
 import cookie from "cookie";
-
+// import { bizInfoStore } from "../../components/BusinessContextProvider/BusinessContextProvider";
 
 const Signin = () => {
   const cookies = cookie.parse(document.cookie);
@@ -24,12 +24,7 @@ const Signin = () => {
         body: JSON.stringify(payload),
       });
 
-      console.log("payload", payload);
-
-      const result = await res.json()
-      console.log("result",result)
-
-      console.log("res", res);
+      const result = await res.json();
 
       if (!res.ok) {
         if (res.status === 404)
@@ -38,7 +33,12 @@ const Signin = () => {
           });
       } else {
         document.cookie = `token=${result.token}`;
-        document.cookie = "loggedIn=true;max-age=60*1000";
+        document.cookie = "loggedIn=true";
+        console.log(result.data);
+        const authState = useContext(bizInfoStore);
+        const {dispatch} = authState
+        dispatch({type:'UPDATE_BIZ', payload:''})
+        console.log(authState.state)
         window.location.assign("/dashboard");
       }
     } catch (err) {
@@ -67,6 +67,7 @@ const Signin = () => {
             style={{ textAlign: "left" }}
           >
             <legend className="f4 fw6 ph0 mh0 center">Sign In</legend>
+            <p> Please sign in below. </p>
             <div className="mt3">
               <label className="db fw6 lh-copy f6" htmlFor="email-address">
                 Email
@@ -103,9 +104,9 @@ const Signin = () => {
             </button>
           </div>
           <div className="lh-copy mt3">
-            <button className="f6 link dim gold db pointer register-link">
+            <div className="f6 link dim gold db pointer register-link">
               <Link to="/register-business-owner">Register today!</Link>
-            </button>
+            </div>
           </div>
         </div>
       </main>

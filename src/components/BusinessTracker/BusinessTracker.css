@@ -5,3 +5,8 @@
   width: 10%;
   height: 10%;
 }
+
+.textview{
+  width: 20rem;
+  margin: .5rem;
+}

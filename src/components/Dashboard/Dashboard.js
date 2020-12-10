@@ -1,10 +1,9 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import "./Dashboard.css";
 import { Link } from "react-router-dom";
 import BusinessCard from "../BusinessCard/BusinessCard";
 import DashboardButton from "../DashboardButton/DashboardButton";
 import { BusinessOwnerContext } from "../BusinessOwnerContextProvider/BusinessOwnerContextProvider";
-import { BusinessContext } from "../BusinessContextProvider/BusinessContextProvider";
 
 const Dashboard = () => {
   // const { mockBiz } = location.state;
@@ -15,6 +14,7 @@ const Dashboard = () => {
     const { isActive } = business;
     setBusiness({ isActive: !business.isActive });
   };
+
   // need to make sure toggle details are being passed into the correct pages and need to connect it to the active barso it can make actual changes to the background color.
 
   const editButton = {
@@ -44,8 +44,7 @@ const Dashboard = () => {
   };
 
   return (
-    <BusinessContext.Consumer>
-      {/* <BusinessOwnerContext.Consumer> */}
+    <BusinessOwnerContext.Consumer>
       {(context) => (
         <React.Fragment>
           <div
@@ -101,8 +100,7 @@ const Dashboard = () => {
           </div>
         </React.Fragment>
       )}
-      {/* </BusinessOwnerContext.Consumer> */}
-    </BusinessContext.Consumer>
+    </BusinessOwnerContext.Consumer>
   );
 };
 

@@ -14,15 +14,27 @@ const getAllBusinesses = (req, res) => {
 };
 
 const createBusiness = (req, res) => {
-  const { businessName, streetAddress, city, state, zipcode, maxOccupancy, allowedOccupancyRestriction } = req.body;
+  const {
+    businessName,
+    streetAddress,
+    city,
+    state,
+    zipcode,
+    website,
+    businessPhone,
+    maxOccupancy,
+    allowedOccupancyRestriction,
+  } = req.body;
   let sql =
-    "INSERT INTO businesses (businessName, streetAddress, city, state, zipcode, maxOccupancy, allowedOccupancyRestriction) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    "INSERT INTO businesses (businessName, streetAddress, city, state, zipcode, website, businessPhone, maxOccupancy, allowedOccupancyRestriction) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)";
   sql = mysql.format(sql, [
     businessName,
     streetAddress,
     city,
     state,
     zipcode,
+    website,
+    businessPhone,
     maxOccupancy,
     allowedOccupancyRestriction,
   ]);
@@ -35,7 +47,52 @@ const createBusiness = (req, res) => {
   });
 };
 
+const getBusinessById = (req, res) => {
+  let sql = "SELECT * FROM businesses WHERE businessId = ?";
+  sql = mysql.format(sql, [req.params.businessId]);
+
+  pool.query(sql, (err, rows) => {
+    if (err) return handleSQLError(res, err);
+    return res.json(rows);
+  });
+};
+
+const updateBusinessById = (req, res) => {
+  const {
+    businessName,
+    streetAddress,
+    city,
+    state,
+    zipcode,
+    website,
+    businessPhone,
+    maxOccupancy,
+    allowedOccupancyRestriction,
+  } = req.body;
+  let sql =
+    "UPDATE businesses SET businessName = ?, streetAddress = ?, city = ?, state = ?, zipcode = ?, website = ?,businessPhone = ?, maxOccupancy = ?, allowedOccupancyRestriction = ? WHERE businessId = ?";
+  sql = mysql.format(sql, [
+    businessName,
+    streetAddress,
+    city,
+    state,
+    zipcode,
+    website,
+    businessPhone,
+    maxOccupancy,
+    allowedOccupancyRestriction,
+    req.params.businessId,
+  ]);
+
+  pool.query(sql, (err, rows) => {
+    if (err) return handleSQLError(res, err);
+    return res.status(200).json(rows);
+  });
+};
+
 module.exports = {
   getAllBusinesses,
   createBusiness,
+  getBusinessById,
+  updateBusinessById,
 };

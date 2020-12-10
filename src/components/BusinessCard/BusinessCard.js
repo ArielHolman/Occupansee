@@ -1,12 +1,13 @@
-import React from "react";
+import React, {useContext} from "react";
 import "./BusinessCard.css";
 import { BusinessContext } from "../BusinessContextProvider/BusinessContextProvider";
 
 const BusinessCard = () => {
+//   const { context.state } = useContext(BusinessContext);
+
   return (
-    <BusinessContext.Consumer>
-      {(context) => (
-        <React.Fragment>
+<BusinessContext.Consumer>
+{(context) => (
           <div
             style={{
               display: "flex",
@@ -56,9 +57,8 @@ const BusinessCard = () => {
               </article>
             </section>
           </div>
-        </React.Fragment>
-      )}
-    </BusinessContext.Consumer>
+          )}
+          </BusinessContext.Consumer>
   );
 };
 export default BusinessCard;

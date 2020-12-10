@@ -1,14 +1,14 @@
-import React, { Component } from "react";
+import React, { useEffect } from "react";
 import Chart from "chart.js";
 import "./OccupancyChart.css";
 
-export default class OccupancyChart extends Component {
-  chartRef = React.createRef();
+const OccupancyChart = ({ total }) => {
+  const chartRef = React.createRef();
 
-  componentDidMount = () => {
-    const currentOccupancy = 95;
+  useEffect(() => {
+    const currentOccupancy = total;
     const maxOccupancy = 150;
-    const percent = currentOccupancy/maxOccupancy*100;
+    const percent = (currentOccupancy / maxOccupancy) * 100;
     const color = "#01713c";
     const canvas = "chartCanvas";
     const container = "chartContainer";
@@ -49,26 +49,30 @@ export default class OccupancyChart extends Component {
 
     divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
     chartContainer.appendChild(divElement.firstChild); // Append the divElement within the chartContainer as it's child
-  };
-  render() {
-    return (
-      <div>
-        <main className="main">
-          <section className="chart" id="chartContainer">
-            <figure className="chart__figure">
-              <canvas
-                className="chart__canvas"
-                id="chartCanvas"
-                width="360"
-                height="360"
-                aria-label="Example doughnut chart showing data as a percentage"
-                role="img"
-                ref={this.chartRef}
-              ></canvas>
-            </figure>
-          </section>
-        </main>
-      </div>
-    );
-  }
-}
+
+    // let domString2 = '<div class="chart__value"><p>' + percentValue + "%</p></div>"; // String holding markup for above created element
+    // let parentDiv = domString2.divElement
+    // parentDiv.replaceChild(domString, domString2);
+  });
+
+  return (
+    <div>
+      <main className="main">
+        <section className="chart" id="chartContainer">
+          <figure className="chart__figure">
+            <canvas
+              className="chart__canvas"
+              id="chartCanvas"
+              width="360"
+              height="360"
+              aria-label="Example doughnut chart showing data as a percentage"
+              role="img"
+              ref={chartRef}
+            ></canvas>
+          </figure>
+        </section>
+      </main>
+    </div>
+  );
+};
+export default OccupancyChart;

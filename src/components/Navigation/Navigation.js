@@ -5,9 +5,7 @@ import cookie from "cookie";
 
 const Navigation = () => {
   const cookies = cookie.parse(document.cookie);
-console.log("cookie", cookie)
-console.log("cookies", cookies)
-console.log("hello")
+
   return (
     <nav
       style={{
@@ -32,14 +30,13 @@ console.log("hello")
           </Link>
         </h2>
       </div>
-      {cookies.loggedIn === true && (
+      {cookies.loggedIn && (
         <div>
           <button
             type="button"
             className="btn btn-info button-format items-center"
             onClick={() => {
-              document.cookie = "loggedIn=true";
-              window.location.assign("/home");
+              window.location.assign("/");
             }}
           >
             {" "}
@@ -49,7 +46,6 @@ console.log("hello")
             type="button"
             className="btn btn-info button-format items-center"
             onClick={() => {
-              document.cookie = "loggedIn=";
               window.location.assign("/dashboard");
             }}
           >
@@ -61,24 +57,13 @@ console.log("hello")
             className="btn btn-info button-format"
             onClick={() => {
               document.cookie = "loggedIn=";
-              window.location.assign("/home");
+              window.location.assign("/");
             }}
           >
             {" "}
             Sign Out{" "}
           </button>
         </div>
-      )}
-      {cookies.loggedIn === '' && (
-        <button
-          color="inherit"
-          className="nav-list-item"
-          onClick={() => {
-            window.location.replace("/signin");
-          }}
-        >
-          Login
-        </button>
       )}
     </nav>
   );

@@ -3,6 +3,7 @@ import { businesses } from "../../businesses";
 import "./Home.css";
 import { Link } from "react-router-dom";
 import { BusinessOwnerContext } from "../BusinessOwnerContextProvider/BusinessOwnerContextProvider";
+import cookie from "cookie";
 
 class Home extends Component {
   constructor() {
@@ -18,18 +19,20 @@ class Home extends Component {
   };
 
   render() {
-    const filteredBusinesses = this.state.businesses.filter((businesses) => {
-      return businesses.businessName
-        .toLowerCase()
-        .includes(this.state.searchfield.toLowerCase());
-    });
+    // const filteredBusinesses = this.state.businesses.filter((businesses) => {
+    //   return businesses.businessName
+    //     .toLowerCase()
+    //     .includes(this.state.searchfield.toLowerCase());
+    // });
+
+    const cookies = cookie.parse(document.cookie);
 
     return (
       <BusinessOwnerContext.Consumer>
         {(context) => (
-          <div className="home ma0">
+          <section className="home ma0">
             <div className="tc bg-black-70 white-90">
-              <h1 className="f-subheadline ma3 pt3-ns">Occupansee</h1>
+              <h1 className="f-subheadline ma3 pt2-ns">Occupansee</h1>
               <div className="text-container">
                 <p className="f3 swipe">{"No more waiting in lines!"}</p>
               </div>
@@ -45,30 +48,30 @@ class Home extends Component {
                   </button>
                 </div>
               </div>
-              <ul className="center flex flex-column list f4 pb1-ns">
+              <ul className="center flex flex-column list f4 pb4-ns">
                 <li> 1) Search for a business</li>
                 <li> 2) Select the business</li>
                 <li> 3) View current occupancy</li>
                 <li> 4) Plan your next visit!</li>
               </ul>
-              {!context.state.isSignedIn && (
+              {!cookies.loggedIn && (
                 <div className="ma3 pb3-l">
-                  <span className="f6 underline link pa1 pointer">
+                  <span className="f5 underline link pa1 pointer">
                     <Link to="/register-business-owner" className="link-font">
                       Register your business TODAY!
                     </Link>
                   </span>
-                  <br />
-                  <span className="link-font link f6 underline pa1 pointer">
+                  <br/>
+                  <p className="f5 pa1 pointer">
                     Already have an account?{" "}
-                    <Link to="/signin" className="link-font">
+                    <Link to="/signin" className="link-font underline">
                       Sign In
                     </Link>
-                  </span>
+                  </p>
                 </div>
               )}
             </div>
-          </div>
+          </section>
         )}
       </BusinessOwnerContext.Consumer>
     );
