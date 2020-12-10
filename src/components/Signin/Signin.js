@@ -1,8 +1,9 @@
 import React, { useState, useContext } from "react";
-import { Link } from "react-router-dom";
+import { Link, Redirect } from "react-router-dom";
 import "./Signin.css";
 import cookie from "cookie";
-// import { bizInfoStore } from "../../components/BusinessContextProvider/BusinessContextProvider";
+import { BusinessContext } from "../../components/BusinessContextProvider/BusinessContextProvider";
+import { BusinessOwnerContext } from "../../components/BusinessOwnerContextProvider/BusinessOwnerContextProvider";
 
 const Signin = () => {
   const cookies = cookie.parse(document.cookie);
@@ -10,10 +11,15 @@ const Signin = () => {
     email: "",
     password: "",
   });
+  const [redirectToDash, setRedirectToDash] = useState(false);
+  const [errMsg, setErrMsg] = useState("");
+  const { updateBusinessInfo } = useContext(BusinessContext);
+  const { updateBusinessOwner } = useContext(BusinessOwnerContext);
 
   const onSignIn = async (e) => {
     e.preventDefault();
     const payload = { ...credentials };
+
     try {
       const res = await fetch("http://localhost:4010/signIn", {
         method: "POST",
@@ -27,28 +33,23 @@ const Signin = () => {
       const result = await res.json();
 
       if (!res.ok) {
-        if (res.status === 404)
-          ({
-            msg: "Account does not exist with this email or password.",
-          });
+        if (res.status === 404) {
+          setErrMsg("Account does not exist with this email or password.");
+        }
       } else {
         document.cookie = `token=${result.token}`;
         document.cookie = "loggedIn=true";
         console.log(result.data);
-        const authState = useContext(bizInfoStore);
-        const {dispatch} = authState
-        dispatch({type:'UPDATE_BIZ', payload:''})
-        console.log(authState.state)
-        window.location.assign("/dashboard");
+        updateBusinessOwner(result.data);
+        setRedirectToDash(true);
       }
     } catch (err) {
-      if (err.status === 404)
-        ({
-          msg: "Account does not exist with this email or password.",
-        });
+      console.log(err);
     }
   };
-
+  if (redirectToDash) {
+    return <Redirect to="/dashboard" />;
+  }
   const handleTextChange = (e) => {
     const creds = { ...credentials };
     creds[e.target.id] = e.target.value;

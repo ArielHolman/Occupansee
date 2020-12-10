@@ -17,9 +17,9 @@ const BusinessSettings = ({ toggleDetails }) => {
 
   const handleChangeSwitch = (event) => {
     setState({ ...active, [event.target.name]: event.target.checked });
-    {
-      toggleDetails;
-    }
+    // {
+    //   toggleDetails;
+    // }
     if (!event.target.checked) {
       setNotification({
         ...notification,

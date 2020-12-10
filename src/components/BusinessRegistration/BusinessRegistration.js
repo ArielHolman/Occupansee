@@ -1,6 +1,5 @@
 import React from "react";
 import BusinessInfoForm from "../BusinessInfoForm/BusinessInfoForm";
-import { Link } from "react-router-dom";
 
 const BusinessRegistration = () => {
   return (

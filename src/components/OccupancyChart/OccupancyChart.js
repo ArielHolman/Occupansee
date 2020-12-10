@@ -50,9 +50,12 @@ const OccupancyChart = ({ total }) => {
     divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
     chartContainer.appendChild(divElement.firstChild); // Append the divElement within the chartContainer as it's child
 
-    // let domString2 = '<div class="chart__value"><p>' + percentValue + "%</p></div>"; // String holding markup for above created element
-    // let parentDiv = domString2.divElement
-    // parentDiv.replaceChild(domString, domString2);
+    let domString2 = '<div class="chart__value"><p>' + percentValue + "%</p></div>"; // String holding markup for above created element
+    divElement.innerHTML = domString2
+    chartContainer.appendChild(divElement.firstChild);
+    let parentDiv = domString2.parentNode
+    console.log(parentDiv)
+    parentDiv.replaceChild(domString, domString2);
   });
 
   return (

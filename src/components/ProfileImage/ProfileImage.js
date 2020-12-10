@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProfileImage.css"
+import "./ProfileImage.css";
 
 const ProfileImage = () => {
   return (
@@ -7,6 +7,7 @@ const ProfileImage = () => {
       <div className="pic-container center">
         <img
           className="profile-pic"
+          alt="profile"
           src="https://nitrocdn.com/CNKIidEmUjTyxuxShKseLbFuedcNDbhI/assets/static/optimized/rev-3c0aa26/wp-content/uploads/2019/10/Screen-Shot-2019-10-14-at-11.51.29-am.jpg"
         />
       </div>

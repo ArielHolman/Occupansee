@@ -1,6 +1,5 @@
 import React from "react";
 import BusinessInfoEditForm from "../BusinessInfoEditForm/BusinessInfoEditForm";
-import { Link, Route } from "react-router-dom";
 import ProfileImage from "../ProfileImage/ProfileImage"
 
 const EditBusinessInfo = () => {
