@@ -4,7 +4,6 @@ require("dotenv").config();
 class Connection {
   constructor() {
     if (!this.pool) {
-      console.log("creating connection...");
       this.pool = mysql.createPool({
         connectionLimit: 100,
         host: process.env.DB_HOST,

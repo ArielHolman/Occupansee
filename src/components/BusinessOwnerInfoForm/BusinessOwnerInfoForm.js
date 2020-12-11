@@ -22,7 +22,7 @@ const BusinessOwnerInfoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = { ...businessOwner };
-    const res = await fetch("http://localhost:4010/createOwner", {
+    const res = await fetch("/createOwner", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -36,7 +36,6 @@ const BusinessOwnerInfoForm = () => {
     // window.location.assign("/register-business");
   };
   if (redirectToBizRegistration) {
-    console.log(ownerId);
     return (
       <Redirect
         to={{ pathname: "/register-business", state: { id: ownerId } }}

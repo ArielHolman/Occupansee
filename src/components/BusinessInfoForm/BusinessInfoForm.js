@@ -26,7 +26,7 @@ const BusinessInfoForm = ({id}) => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = { ...business };
-    const res = await fetch("http://localhost:4010/createBusiness", {
+    const res = await fetch("/createBusiness", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -35,7 +35,6 @@ const BusinessInfoForm = ({id}) => {
       body: JSON.stringify(payload),
     });
     const response = await res.json();
-    console.log("Here I am:", response);
     setRedirectToSignin(true)
   };
 

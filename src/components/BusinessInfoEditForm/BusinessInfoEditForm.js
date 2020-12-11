@@ -26,8 +26,7 @@ const BusinessInfoEditForm = () => {
     e.preventDefault();
     const payload = { ...business };
     const businessId = businessInfo.businessId
-    console.log('BIZ ID', businessId)
-    const res = await fetch("http://localhost:4010/:businessId", {
+    const res = await fetch("/:businessId", {
       method: "PUT",
       headers: {
         Accept: "application/json",
@@ -36,7 +35,6 @@ const BusinessInfoEditForm = () => {
       body: JSON.stringify(payload),
     });
     const result = await res.text();
-    console.log("Put Request", result);
     window.location.assign("/dashboard");
   };
 

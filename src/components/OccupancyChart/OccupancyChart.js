@@ -56,10 +56,7 @@ const OccupancyChart = ({ total }) => {
     // Original case
     divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
     chartContainer.appendChild(divElement.lastChild); // Append the divElement within the chartContainer as it's child
-    console.log(currentOccupancy);
-    console.log(total);
     let myCoolDiv = document.getElementById("MyCoolDiv");
-    console.log('mydiv', myCoolDiv)
     onChange()
     // divElement.replaceChild(myCoolDiv, divElement.firstElementChild);
   });

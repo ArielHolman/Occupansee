@@ -37,8 +37,6 @@ const getSignIn = (req, res) => {
       data.password = "REDACTED";
 
       const token = jwt.sign(data, "secret");
-      console.log("USER DATA", data);
-      console.log("BUSINESS DATA", businessData);
       res.status(200).json({
         msg: "Login successful",
         token,
@@ -48,12 +46,10 @@ const getSignIn = (req, res) => {
   });
 };
 const getBusinessFromSignIn = (ownerId) => {
-  console.log("BIZ OWNER ID", ownerId);
   let sql = "SELECT * FROM businesses WHERE businessId = 1";
   // sql = mysql.format(sql, [ownerId]);
 
   pool.query(sql, (err, rows) => {
-    console.log('ROWSSS', rows)
     return rows;
   });
 };
@@ -86,7 +82,6 @@ const createBusinessOwner = (req, res) => {
           return res.status(409).send("UserName is taken");
         return handleSQLError(res, err);
       }
-      console.log("RESULT", rows);
     });
   });
 };

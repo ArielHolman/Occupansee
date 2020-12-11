@@ -11,7 +11,6 @@ const BusinessOwnerContextProvider = ({ children }) => {
     password: "harryPW1234",
   });
   function updateBusinessOwner(ownerInfo) {
-    console.log("IN Owner", ownerInfo);
     setBusinessOwner(ownerInfo);
   }
 
