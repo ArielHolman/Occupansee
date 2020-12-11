@@ -43,7 +43,7 @@ const Dashboard = () => {
 
   return (
     <div
-      className="dashboard bg-white-90 mh6 pt3-ns"
+      className="dashboard bg-white-90 mh6 "
       style={{
         display: "flex",
         flexDirection: "column",

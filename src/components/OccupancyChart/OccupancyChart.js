@@ -6,7 +6,7 @@ const OccupancyChart = ({ total }) => {
   const chartRef = React.createRef();
 
   useEffect(() => {
-    const currentOccupancy = total;
+    const currentOccupancy = 11;
     const maxOccupancy = 45;
     const percent = (currentOccupancy / maxOccupancy) * 100;
     const color = "#01713c";

@@ -35,7 +35,7 @@ class Home extends Component {
           {(context) => (
             <section className="home ma0">
               <div className="tc bg-black-70 white-90">
-                <h1 className="f-subheadline ma3 pt2-ns">Occupansee</h1>
+                <h1 className="f-subheadline ma2 pt2-ns">Occupansee</h1>
                 <div className="text-container">
                   <p className="f3 swipe">{"No more waiting in lines!"}</p>
                 </div>

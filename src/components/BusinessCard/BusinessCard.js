@@ -40,8 +40,8 @@ const BusinessCard = () => {
             </div>
             <div className="center">
               <img
-                src="https://nitrocdn.com/CNKIidEmUjTyxuxShKseLbFuedcNDbhI/assets/static/optimized/rev-3c0aa26/wp-content/uploads/2019/10/Screen-Shot-2019-10-14-at-11.51.29-am.jpg"
-                className="db h4 w-70"
+                src="https://cdn11.bigcommerce.com/s-7dfz0/images/stencil/1280x1280/products/4384/7652/PFUTX010_westpecan__49383.1582221551.jpg?c=2"
+                className="db h4 w-50"
                 alt="Barista behind the counter preparing a coffee."
               />
             </div>

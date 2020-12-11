@@ -13,6 +13,7 @@ const Navigation = () => {
         display: "flex",
         justifyContent: "space-between",
         alignItems: "center",
+        height:110,
       }}
     >
       <div
