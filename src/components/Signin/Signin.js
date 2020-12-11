@@ -1,6 +1,10 @@
 import React, { useState } from "react";
 import { Link, Redirect } from "react-router-dom";
 import "./Signin.css";
+import cookie from "cookie";
+import Navigation from "../../components/Navigation/Navigation";
+import { BusinessContext } from "../../components/BusinessContextProvider/BusinessContextProvider";
+import { BusinessOwnerContext } from "../../components/BusinessOwnerContextProvider/BusinessOwnerContextProvider";
 
 const Signin = () => {
   const [business, setBusiness] = useState({
@@ -13,6 +17,8 @@ const Signin = () => {
     });
   };
   return (
+    <>
+    <Navigation />
     <form
       onSubmit={onSignIn}
       className="br3 ba shadow-5 b--black-10 mv4 w-100 w-50-m w-25-l mw6 center bg-white-90"
@@ -76,6 +82,7 @@ const Signin = () => {
         />
       )}
     </form>
+    </>
   );
 };
 
