@@ -22,7 +22,7 @@ const BusinessOwnerInfoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = { ...businessOwner };
-    const res = await fetch("http://localhost:4010/createOwner", {
+    const res = await fetch("4010/createOwner", {
       method: "POST",
       headers: {
         Accept: "application/json",

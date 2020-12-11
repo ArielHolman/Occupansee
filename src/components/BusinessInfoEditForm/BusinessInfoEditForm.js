@@ -27,7 +27,7 @@ const BusinessInfoEditForm = () => {
     const payload = { ...business };
     const businessId = businessInfo.businessId
     console.log('BIZ ID', businessId)
-    const res = await fetch("http://localhost:4010/:businessId", {
+    const res = await fetch("4010/:businessId", {
       method: "PUT",
       headers: {
         Accept: "application/json",

@@ -21,7 +21,7 @@ const Signin = () => {
     const payload = { ...credentials };
 
     try {
-      const res = await fetch("http://localhost:4010/signIn", {
+      const res = await fetch("4010/signIn", {
         method: "POST",
         headers: {
           Accept: "application/json",
