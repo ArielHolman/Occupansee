@@ -1,16 +1,15 @@
-// const express = require("express");
-// const businessController = require("../controllers/businesses");
+const express = require("express");
+const businessController = require("../controllers/businesses");
+const router = express.Router();
 
-// const router = express.Router();
+router.get("/businesses", businessController.getAllBusinesses);
 
-// router.get("/", businessController.getAllBusinesses);
+router.get("/:businessId", businessController.getBusinessById);
 
-// router.get("/:business_id", businessController.getBusinessById);
+router.post("/createBusiness", businessController.createBusiness);
 
-// router.post("/", businessController.createBusiness);
+router.put("/:businessId", businessController.updateBusinessById);
 
-// router.put("/:business_id", businessController.updateBusinessById);
+// router.delete("/:businessId", businessController.deleteBusinessById);
 
-// router.delete("/:business_id", businessController.deleteBusinessById);
-
-// module.exports = router;
+module.exports = router;

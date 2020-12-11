@@ -1,7 +1,5 @@
-import { FormatLineSpacingTwoTone } from "@material-ui/icons";
-import { json } from "body-parser";
 import React, { useState } from "react";
-import { Link } from "react-router-dom";
+import { Redirect } from "react-router-dom";
 
 const BusinessOwnerInfoForm = () => {
   const [businessOwner, setBusinessOwner] = useState({
@@ -11,7 +9,10 @@ const BusinessOwnerInfoForm = () => {
     email: "",
     password: "",
   });
-
+  const [redirectToBizRegistration, setRedirectToBizRegistration] = useState(
+    false
+  );
+  const [ownerId, setOwnerId] = useState(null);
   const handleTextChange = (e) => {
     const newBusinessOwner = { ...businessOwner };
     newBusinessOwner[e.target.id] = e.target.value;
@@ -21,7 +22,7 @@ const BusinessOwnerInfoForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     const payload = { ...businessOwner };
-    const res = await fetch("http://localhost:4010/createOwner", {
+    const res = await fetch("/createOwner", {
       method: "POST",
       headers: {
         Accept: "application/json",
@@ -29,10 +30,17 @@ const BusinessOwnerInfoForm = () => {
       },
       body: JSON.stringify(payload),
     });
-    const result = await res.text();
-    console.log("Here I am:", result);
-    window.location.assign("/register-business");
+    const result = await res.json();
+    setOwnerId(result.ownerId);
+    setRedirectToBizRegistration(true);
   };
+  if (redirectToBizRegistration) {
+    return (
+      <Redirect
+        to={{ pathname: "/register-business", state: { id: ownerId } }}
+      />
+    );
+  }
 
   return (
     <form
@@ -40,7 +48,7 @@ const BusinessOwnerInfoForm = () => {
       style={{ textAlign: "left" }}
       onSubmit={handleSubmit}
     >
-      <label className="db fw6 lh-copy f6" htmlFor="firstname">
+      <label className="db fw6 lh-copy f6" htmlFor="firstName">
         First Name
       </label>
       <input

@@ -4,9 +4,12 @@ import ProfileImage from "../ProfileImage/ProfileImage";
 import OccupancyChart from "../OccupancyChart/OccupancyChart";
 import OccupancyTable from "../OccupancyTable/OccupancyTable";
 import "./BusinessProfile.css"
+import Navigation from '../Navigation/Navigation';
 
 const BusinessProfile = () => {
   return (
+    <div>
+      <Navigation />
     <div className="business-profile" >
       <div style={{
           display: "flex",
@@ -32,6 +35,7 @@ const BusinessProfile = () => {
         <OccupancyChart />
         <OccupancyTable />
       </div>
+    </div>
     </div>
   );
 };

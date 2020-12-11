@@ -2,7 +2,7 @@ export const BusinessOwners = [
   {
     firstName: "Harry",
     lastName: "Potter",
-    businessOwnerPhone: 323 - 564 - 7699,
+    businessOwnerPhone: 323-564-7699,
     email: "harry@gmail.com",
     password: "harryPW1234",
   },

@@ -5,6 +5,7 @@ import CardContent from "@material-ui/core/CardContent";
 import Typography from "@material-ui/core/Typography";
 import Switch from "@material-ui/core/Switch";
 import { Link } from "react-router-dom";
+import Navigation from '../Navigation/Navigation';
 
 const BusinessSettings = ({ toggleDetails }) => {
   const [active, setState] = React.useState({
@@ -17,9 +18,9 @@ const BusinessSettings = ({ toggleDetails }) => {
 
   const handleChangeSwitch = (event) => {
     setState({ ...active, [event.target.name]: event.target.checked });
-    {
-      toggleDetails;
-    }
+    // {
+    //   toggleDetails;
+    // }
     if (!event.target.checked) {
       setNotification({
         ...notification,
@@ -32,6 +33,8 @@ const BusinessSettings = ({ toggleDetails }) => {
   };
 
   return (
+    <div>
+      <Navigation />
     <div className=" bg-white-90">
       <BusinessCard />
       <CardContent
@@ -60,7 +63,6 @@ const BusinessSettings = ({ toggleDetails }) => {
             onChange={handleChangeSwitch}
             name="isActive"
             inputProps={{ "aria-label": "primary checkbox" }}
-            style={{ color: "#16AA74" }}
           />
         </CardActions>
         <Typography style={{ color: "red", textAlign: "center" }}>
@@ -72,12 +74,13 @@ const BusinessSettings = ({ toggleDetails }) => {
             type="button"
             className="btn btn-info button-format pointer"
           >
-            <Link style={{ color: "white" }} to="/signin">
+            <Link style={{ color: "white" }} to="/dashboard">
               Save Changes
             </Link>
           </button>
         </div>
       </CardContent>
+    </div>
     </div>
   );
 };
