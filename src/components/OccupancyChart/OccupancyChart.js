@@ -7,7 +7,7 @@ const OccupancyChart = ({ total }) => {
 
   useEffect(() => {
     const currentOccupancy = total;
-    const maxOccupancy = 150;
+    const maxOccupancy = 45;
     const percent = (currentOccupancy / maxOccupancy) * 100;
     const color = "#01713c";
     const canvas = "chartCanvas";
@@ -48,10 +48,10 @@ const OccupancyChart = ({ total }) => {
 
     Chart.defaults.global.animation.duration = animationTime; // Set the animation duration
 
-    // const onChange = () => {
-    //   chartContainer.removeChild(myCoolDiv);
-    //   //  chartContainer.appendChild(myCoolDiv);
-    // };
+    const onChange = () => {
+      chartContainer.removeChild(myCoolDiv);
+       chartContainer.appendChild(myCoolDiv);
+    };
 
     // Original case
     divElement.innerHTML = domString; // Parse the HTML set in the domString to the innerHTML of the divElement
@@ -60,6 +60,7 @@ const OccupancyChart = ({ total }) => {
     console.log(total);
     let myCoolDiv = document.getElementById("MyCoolDiv");
     console.log('mydiv', myCoolDiv)
+    onChange()
     // divElement.replaceChild(myCoolDiv, divElement.firstElementChild);
   });
 

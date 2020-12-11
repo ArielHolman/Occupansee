@@ -3,7 +3,18 @@ import React, { useState } from "react";
 export const BusinessContext = React.createContext();
 
 const BusinessContextProvider = ({ children }) => {
-  const [businessInfo, setBusinessInfo] = useState({});
+  const [businessInfo, setBusinessInfo] = useState({
+    id: 1,
+    businessname: "West Pecan Coffee + Beer",
+    phone: "(512) 551-3471",
+    street: "100 W Pecan St.",
+    city: "Pflugerville",
+    state: "TX",
+    zip: 78660,
+    website: "https://westpecancoffee.com",
+    maxoccupancy: 45,
+    isActive: false,
+  });
   function updateBusinessInfo(signedInInfo) {
     setBusinessInfo(signedInInfo);
   }

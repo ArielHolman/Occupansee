@@ -1,11 +1,10 @@
-import React from "react";
+import React, {useContext} from "react";
 import { BusinessContext } from "../BusinessContextProvider/BusinessContextProvider";
 
 const ProfileCard = () => {
+  const {businessInfo} = useContext(BusinessContext)
   return (
-    <BusinessContext.Consumer>
-      {(context) => (
-        <React.Fragment>
+
           <div className="flex flex-column">
             <div
               style={{
@@ -18,20 +17,18 @@ const ProfileCard = () => {
             >
               <div style={{ marginRight: "3rem" }}>
                 <h2 className="f2 fw1 baskerville mt0 lh-title">
-                  {context.state.businessname}
+                  {businessInfo.businessname}
                 </h2>
-                <p className="f6  mv0 lh-copy">{context.state.street}</p>
+                <p className="f6  mv0 lh-copy">{businessInfo.street}</p>
                 <p className="f6  mv0 lh-copy mb2-l">
-                  {context.state.city}, {context.state.state}{" "}{context.state.zip}
+                  {businessInfo.city}, {businessInfo.state}{" "}{businessInfo.zip}
                 </p>
-                <p className="f6  mv0 lh-copy mb2-l">{context.state.phone}</p>
-                <p className="f6  mv0 lh-copy">{context.state.website}</p>
+                <p className="f6  mv0 lh-copy mb2-l">{businessInfo.phone}</p>
+                <p className="f6  mv0 lh-copy">{businessInfo.website}</p>
               </div>
             </div>
           </div>
-        </React.Fragment>
-      )}
-    </BusinessContext.Consumer>
+       
   );
 };
 

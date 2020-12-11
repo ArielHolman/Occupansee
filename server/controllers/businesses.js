@@ -43,6 +43,7 @@ const createBusiness = (req, res) => {
 
   pool.query(sql, (err, rows) => {
     if (err) return handleSQLError(res, err);
+    console.log('ROW', rows)
     return res
       .status(200)
       .json({ message: `Your business account has been sucessfully created` });

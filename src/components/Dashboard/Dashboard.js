@@ -51,7 +51,7 @@ const Dashboard = () => {
       }}
     >
       <div className="flex flex-column justify-start w-75">
-        <h2 className="f3">Hello, {businessOwner.firstName}</h2>
+        <h2 className="f3">Hello {businessOwner.firstName},</h2>
         <p>
           Keep your customers up to date by tracking your occupancy at the door!
         </p>

@@ -1,12 +1,36 @@
-.tracker-chart {
-  position: absolute;
+.tracker-total-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 500px;
 }
-.tracker-chart-container {
-  width: 10%;
-  height: 10%;
+
+.tracker-total{
+  font-size: 2rem;
+  padding: 20px;
+}
+
+.tracker-percentage {
+  margin: 0;
+}
+
+.tracker-total-text {
+  font-size: 2rem;
+  padding: 0;
+}
+
+.tracker-text {
+  margin: 0;
 }
 
 .textview{
   width: 20rem;
   margin: .5rem;
+  font-size: 3rem;
+}
+
+.biz-tracker{
+  border: solid black 2px;
+  border-radius: 10%;
+  width: 700px;
 }

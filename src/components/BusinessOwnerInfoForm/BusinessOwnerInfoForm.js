@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom";
 
 const BusinessOwnerInfoForm = () => {
   const [businessOwner, setBusinessOwner] = useState({
@@ -8,7 +9,10 @@ const BusinessOwnerInfoForm = () => {
     email: "",
     password: "",
   });
-
+  const [redirectToBizRegistration, setRedirectToBizRegistration] = useState(
+    false
+  );
+  const [ownerId, setOwnerId] = useState(null);
   const handleTextChange = (e) => {
     const newBusinessOwner = { ...businessOwner };
     newBusinessOwner[e.target.id] = e.target.value;
@@ -26,10 +30,19 @@ const BusinessOwnerInfoForm = () => {
       },
       body: JSON.stringify(payload),
     });
-    const result = await res.text();
-    console.log("Here I am:", result);
+    const result = await res.json();
+    setOwnerId(result.ownerId);
+    setRedirectToBizRegistration(true);
     // window.location.assign("/register-business");
   };
+  if (redirectToBizRegistration) {
+    console.log(ownerId);
+    return (
+      <Redirect
+        to={{ pathname: "/register-business", state: { id: ownerId } }}
+      />
+    );
+  }
 
   return (
     <form

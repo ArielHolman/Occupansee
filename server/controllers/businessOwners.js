@@ -31,11 +31,14 @@ const getSignIn = (req, res) => {
     const hash = rows[0].password;
     bcrypt.compare(password, hash).then((result) => {
       if (!result) return res.status(400).send("Invalid password");
-      const data = { ...rows[0] };
 
+      const data = { ...rows[0] };
+      const businessData = getBusinessFromSignIn(data.businessOwnerId);
       data.password = "REDACTED";
 
       const token = jwt.sign(data, "secret");
+      console.log("USER DATA", data);
+      console.log("BUSINESS DATA", businessData);
       res.status(200).json({
         msg: "Login successful",
         token,
@@ -44,12 +47,23 @@ const getSignIn = (req, res) => {
     });
   });
 };
+const getBusinessFromSignIn = (ownerId) => {
+  console.log("BIZ OWNER ID", ownerId);
+  let sql = "SELECT * FROM businesses WHERE businessId = 1";
+  // sql = mysql.format(sql, [ownerId]);
+
+  pool.query(sql, (err, rows) => {
+    console.log('ROWSSS', rows)
+    return rows;
+  });
+};
 
 const createBusinessOwner = (req, res) => {
   const { firstName, lastName, businessOwnerPhone, email, password } = req.body;
   let sql =
     "INSERT INTO businessowners (firstName, lastName, businessOwnerPhone, email, password) VALUES (?, ?, ?, ?, ?); ";
   let getID = "SELECT MAX(businessOwnerId) FROM businessowners;";
+
   bcrypt.hash(password, saltRounds, function (err, hash) {
     sql = mysql.format(sql, [
       firstName,
@@ -58,9 +72,13 @@ const createBusinessOwner = (req, res) => {
       email,
       hash,
     ]);
+
     pool.query(getID, (err, rows) => {
-      console.log(err);
-      console.log("u a row?", rows[0]['MAX(businessOwnerId)']);
+      if (err) {
+        return handleSQLError(err);
+      }
+      const ownerId = rows[0]["MAX(businessOwnerId)"]; 
+      return res.json({ ownerId: ownerId });
     });
     pool.query(sql, (err, rows) => {
       if (err) {
@@ -69,7 +87,6 @@ const createBusinessOwner = (req, res) => {
         return handleSQLError(res, err);
       }
       console.log("RESULT", rows);
-      return res.send("Sign-up successful");
     });
   });
 };

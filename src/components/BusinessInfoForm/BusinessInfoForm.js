@@ -1,6 +1,7 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom"
 
-const BusinessInfoForm = () => {
+const BusinessInfoForm = ({id}) => {
   const [business, setBusiness] = useState({
     businessName: "",
     streetAddress: "",
@@ -11,7 +12,10 @@ const BusinessInfoForm = () => {
     businessPhone: "",
     maxOccupancy: "",
     allowedOccupancyRestriction: "",
+    ownerId: id
   });
+
+  const [redirectToSignin, setRedirectToSignin] = useState(false)
 
   const handleTextChange = (e) => {
     const newBusiness = { ...business };
@@ -30,10 +34,14 @@ const BusinessInfoForm = () => {
       },
       body: JSON.stringify(payload),
     });
-    const result = await res.text();
-    console.log("Here I am:", result);
-    window.location.assign("/signin");
+    const response = await res.json();
+    console.log("Here I am:", response);
+    setRedirectToSignin(true)
   };
+
+  if (redirectToSignin) {
+    return <Redirect to="/signin" />
+  }
 
   return (
     <form
