@@ -1,29 +1,30 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
 
-const BusinessOwnerContext = React.createContext();
+export const BusinessOwnerContext = React.createContext();
 
-export default class BusinessOwnerContextProvider extends Component {
-  state = {
-    businessOwnerid: 1,
-    firstname: "Harry",
-    lastname: "Potter",
-    businessOwnerPhone: "(512) 604-4004",
-    email: "harry.potter@gmail.com",
-    password: "Password1234",
-    isSignedIn: false,
-  };
-
-  render() {
-    return (
-      <BusinessOwnerContext.Provider
-        value={{
-          state: this.state,
-        }}
-      >
-        {this.props.children}
-      </BusinessOwnerContext.Provider>
-    );
+const BusinessOwnerContextProvider = ({ children }) => {
+  const [businessOwner, setBusinessOwner] = useState({
+    firstName: "Harry",
+    lastName: "Potter",
+    businessOwnerPhone: 323 - 564 - 7699,
+    email: "harry@gmail.com",
+    password: "harryPW1234",
+  });
+  function updateBusinessOwner(ownerInfo) {
+    console.log("IN Owner", ownerInfo);
+    setBusinessOwner(ownerInfo);
   }
-}
 
-export { BusinessOwnerContext };
+  return (
+    <BusinessOwnerContext.Provider
+      value={{
+        businessOwner,
+        updateBusinessOwner,
+      }}
+    >
+      {children}
+    </BusinessOwnerContext.Provider>
+  );
+};
+
+export default BusinessOwnerContextProvider;

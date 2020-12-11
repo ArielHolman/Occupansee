@@ -1,15 +1,21 @@
 import React, { useState } from "react";
+import { Redirect } from "react-router-dom"
 
-const BusinessInfoForm = () => {
+const BusinessInfoForm = ({id}) => {
   const [business, setBusiness] = useState({
     businessName: "",
     streetAddress: "",
     city: "",
     state: "",
     zipcode: "",
+    website: "",
+    businessPhone: "",
     maxOccupancy: "",
     allowedOccupancyRestriction: "",
+    ownerId: id
   });
+
+  const [redirectToSignin, setRedirectToSignin] = useState(false)
 
   const handleTextChange = (e) => {
     const newBusiness = { ...business };
@@ -28,10 +34,14 @@ const BusinessInfoForm = () => {
       },
       body: JSON.stringify(payload),
     });
-    const result = await res.text();
-    console.log("Here I am:", result);
-    window.location.assign("/dashboard");
+    const response = await res.json();
+    console.log("Here I am:", response);
+    setRedirectToSignin(true)
   };
+
+  if (redirectToSignin) {
+    return <Redirect to="/signin" />
+  }
 
   return (
     <form
@@ -105,6 +115,33 @@ const BusinessInfoForm = () => {
         placeholder="Example: 77433"
         style={{ marginBottom: 15 }}
       />
+      <label className="db fw6 lh-copy f6" htmlFor="website">
+        Website
+      </label>
+      <input
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        type="text"
+        value={business.website}
+        onChange={handleTextChange}
+        name="website"
+        id="website"
+        placeholder="Example: www.examples.com"
+        style={{ marginBottom: 15 }}
+      />
+      <label className="db fw6 lh-copy f6" htmlFor="businessPhone">
+        Business Phone Number
+      </label>
+      <input
+        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        type="tel"
+        id="businessPhone"
+        name="businessPhone"
+        value={business.businessPhone}
+        onChange={handleTextChange}
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        placeholder="123-456-7890"
+        style={{ marginBottom: 15 }}
+      />
       <label className="db fw6 lh-copy f6" htmlFor="maxOccupancy">
         Max Occupancy
       </label>
@@ -140,8 +177,9 @@ const BusinessInfoForm = () => {
         <button
           type="submit"
           className="btn btn-info button-format pointer mr0"
+          id="business-info-button"
         >
-          Register
+          Create Business Information
         </button>
       </div>
     </form>

@@ -5,8 +5,11 @@ const businessesRouter = require("./routes/businesses");
 require("dotenv").config();
 var cors = require("cors");
 
+//use static
+
 const app = express();
 const port = process.env.PORT || 4010;
+app.use(express.static("build"));
 
 app.use(bodyParser.json());
 app.use("/", cors(corsOptions), businessOwnersRouter, businessesRouter);

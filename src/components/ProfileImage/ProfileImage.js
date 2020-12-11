@@ -1,5 +1,5 @@
 import React from "react";
-import "./ProfileImage.css"
+import "./ProfileImage.css";
 
 const ProfileImage = () => {
   return (
@@ -7,7 +7,8 @@ const ProfileImage = () => {
       <div className="pic-container center">
         <img
           className="profile-pic"
-          src="https://nitrocdn.com/CNKIidEmUjTyxuxShKseLbFuedcNDbhI/assets/static/optimized/rev-3c0aa26/wp-content/uploads/2019/10/Screen-Shot-2019-10-14-at-11.51.29-am.jpg"
+          alt="entrance to west pecan coffee and beer in pflugerville,tx "
+          src="https://cdn11.bigcommerce.com/s-7dfz0/images/stencil/1280x1280/products/4384/7652/PFUTX010_westpecan__49383.1582221551.jpg?c=2"
         />
       </div>
       <div className="upload-button center">

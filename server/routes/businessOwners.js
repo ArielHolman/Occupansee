@@ -4,6 +4,8 @@ const router = express.Router();
 
 router.get("/owners", businessOwnersControllers.getAllBusinessOwners);
 
+router.post("/signIn", businessOwnersControllers.getSignIn);
+
 // router.get("/:businessOwner_id", businessOwnersControllers.getBusinessOwnerById);
 
 router.post("/createOwner", businessOwnersControllers.createBusinessOwner);

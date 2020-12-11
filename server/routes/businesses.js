@@ -4,12 +4,12 @@ const router = express.Router();
 
 router.get("/businesses", businessController.getAllBusinesses);
 
-// router.get("/:business_id", businessController.getBusinessById);
+router.get("/:businessId", businessController.getBusinessById);
 
 router.post("/createBusiness", businessController.createBusiness);
 
-// router.put("/:business_id", businessController.updateBusinessById);
+router.put("/:businessId", businessController.updateBusinessById);
 
-// router.delete("/:business_id", businessController.deleteBusinessById);
+// router.delete("/:businessId", businessController.deleteBusinessById);
 
 module.exports = router;

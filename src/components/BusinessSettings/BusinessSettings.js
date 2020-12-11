@@ -17,9 +17,9 @@ const BusinessSettings = ({ toggleDetails }) => {
 
   const handleChangeSwitch = (event) => {
     setState({ ...active, [event.target.name]: event.target.checked });
-    {
-      toggleDetails;
-    }
+    // {
+    //   toggleDetails;
+    // }
     if (!event.target.checked) {
       setNotification({
         ...notification,
@@ -60,7 +60,6 @@ const BusinessSettings = ({ toggleDetails }) => {
             onChange={handleChangeSwitch}
             name="isActive"
             inputProps={{ "aria-label": "primary checkbox" }}
-            style={{ color: "#16AA74" }}
           />
         </CardActions>
         <Typography style={{ color: "red", textAlign: "center" }}>
@@ -72,7 +71,7 @@ const BusinessSettings = ({ toggleDetails }) => {
             type="button"
             className="btn btn-info button-format pointer"
           >
-            <Link style={{ color: "white" }} to="/signin">
+            <Link style={{ color: "white" }} to="/dashboard">
               Save Changes
             </Link>
           </button>
