@@ -32,5 +32,4 @@ app.use(cors(corsOptions), function (req, res, next) {
 
 app.use(express.json());
 app.listen(port, () => {
-  console.log(`Web server is listening on port ${port}!`);
 });

@@ -21,7 +21,7 @@ const Signin = () => {
     const payload = { ...credentials };
 
     try {
-      const res = await fetch("4010/signIn", {
+      const res = await fetch("/signIn", {
         method: "POST",
         headers: {
           Accept: "application/json",
@@ -39,12 +39,10 @@ const Signin = () => {
       } else {
         document.cookie = `token=${result.token}`;
         document.cookie = "loggedIn=true";
-        console.log(result.data);
         updateBusinessOwner(result.data);
         setRedirectToDash(true);
       }
     } catch (err) {
-      console.log(err);
     }
   };
 
