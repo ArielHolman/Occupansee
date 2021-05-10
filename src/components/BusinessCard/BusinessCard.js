@@ -42,7 +42,7 @@ const BusinessCard = () => {
               <img
                 src="https://cdn11.bigcommerce.com/s-7dfz0/images/stencil/1280x1280/products/4384/7652/PFUTX010_westpecan__49383.1582221551.jpg?c=2"
                 className="db h4 w-50"
-                alt="Barista behind the counter preparing a coffee."
+                alt="outside of a coffee shop."
               />
             </div>
           </div>

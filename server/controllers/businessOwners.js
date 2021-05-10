@@ -4,7 +4,7 @@ const { handleSQLError } = require("../sql/error");
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
 
-// for bcrypt
+// for bcrypt to hash passwords
 const saltRounds = 10;
 
 // FOR ADMIN USE ONLY
@@ -18,6 +18,7 @@ const getAllBusinessOwners = (req, res) => {
   });
 };
 
+//select owner that matches creds
 const getSignIn = (req, res) => {
   const { email, password } = req.body;
 
@@ -45,6 +46,8 @@ const getSignIn = (req, res) => {
     });
   });
 };
+
+//select the first row where owner info matches
 const getBusinessFromSignIn = (ownerId) => {
   let sql = "SELECT * FROM businesses WHERE businessId = 1";
   // sql = mysql.format(sql, [ownerId]);
@@ -54,6 +57,7 @@ const getBusinessFromSignIn = (ownerId) => {
   });
 };
 
+//create a new owner
 const createBusinessOwner = (req, res) => {
   const { firstName, lastName, businessOwnerPhone, email, password } = req.body;
   let sql =
@@ -73,7 +77,7 @@ const createBusinessOwner = (req, res) => {
       if (err) {
         return handleSQLError(err);
       }
-      const ownerId = rows[0]["MAX(businessOwnerId)"]; 
+      const ownerId = rows[0]["MAX(businessOwnerId)"];
       return res.json({ ownerId: ownerId });
     });
     pool.query(sql, (err, rows) => {

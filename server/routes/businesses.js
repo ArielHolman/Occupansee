@@ -10,6 +10,7 @@ router.post("/createBusiness", businessController.createBusiness);
 
 router.put("/:businessId", businessController.updateBusinessById);
 
+// leaving for future updates
 // router.delete("/:businessId", businessController.deleteBusinessById);
 
 module.exports = router;

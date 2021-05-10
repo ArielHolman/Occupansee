@@ -31,5 +31,4 @@ app.use(cors(corsOptions), function (req, res, next) {
 });
 
 app.use(express.json());
-app.listen(port, () => {
-});
+app.listen(port, () => {});

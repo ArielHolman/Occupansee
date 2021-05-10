@@ -2,6 +2,7 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import cookie from "cookie";
+import { CenterFocusStrong } from "@material-ui/icons";
 
 const Navigation = () => {
   const cookies = cookie.parse(document.cookie);
@@ -16,21 +17,22 @@ const Navigation = () => {
         height: 110,
       }}
     >
-      <div
-        style={{
-          display: "flex",
-          justifyContent: "flex-start",
-          alignItems: "center",
-        }}
+      <Link
+        to="/"
+        style={{ color: "black", textDecoration: "none", fontSize: 50 }}
       >
-        <Logo />
-        <h2>
-          <Link style={{ color: "black", textDecoration: "none" }} to="/">
-            {" "}
-            Occupansee{" "}
-          </Link>
-        </h2>
-      </div>
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            margin: 0,
+          }}
+        >
+          <Logo />
+          <p className="occupansee-title">Occupansee</p>
+        </div>
+      </Link>
       {cookies.loggedIn && (
         <div>
           <Link to="/">

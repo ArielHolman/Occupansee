@@ -1,6 +1,6 @@
 import React from "react";
 import { Switch, Route, Redirect } from "react-router";
-import Home from "./components/Home/Home";
+import LandingPage from "./components/LandingPage/LandingPage";
 import Signin from "./components/Signin/Signin";
 import BusinessOwnerRegistration from "./components/BusinessOwnerRegistration/BusinessOwnerRegistration";
 import Dashboard from "./components/Dashboard/Dashboard";
@@ -32,7 +32,7 @@ const ProtectedRoute = ({ component: Component, ...rest }) => {
 const Router = () => {
   return (
     <Switch>
-      <Route exact path="/" component={Home} />
+      <Route exact path="/" component={LandingPage} />
       <Route path="/signin" component={Signin} />
       <Route
         path="/register-business-owner"

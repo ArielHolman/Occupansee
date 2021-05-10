@@ -13,6 +13,7 @@ const getAllBusinesses = (req, res) => {
   });
 };
 
+//create a new business
 const createBusiness = (req, res) => {
   const {
     ownerId,
@@ -49,6 +50,7 @@ const createBusiness = (req, res) => {
   });
 };
 
+//select one business by id
 const getBusinessById = (req, res) => {
   let sql = "SELECT * FROM businesses WHERE businessId = ?";
   sql = mysql.format(sql, [req.params.businessId]);
@@ -59,6 +61,7 @@ const getBusinessById = (req, res) => {
   });
 };
 
+//update biz info
 const updateBusinessById = (req, res) => {
   const {
     businessName,

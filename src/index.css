@@ -1,4 +1,9 @@
 body {
-  font-family: "Suranna", serif;
-  height: auto;
+  font-family: "Open Sans", sans-serif;
+  font-size: 2vw;
+}
+
+.occupansee-title {
+  font-family: "Comfortaa", cursive;
+  margin: 0;
 }
