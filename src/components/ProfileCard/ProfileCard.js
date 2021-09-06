@@ -16,19 +16,18 @@ const ProfileCard = () => {
               }}
             >
               <div style={{ marginRight: "3rem" }}>
-                <h2 className="f2 fw1 baskerville mt0 lh-title">
+                <h2 className="f2 mv1 mt0 ">
                   {businessInfo.businessname}
                 </h2>
-                <p className="f6  mv0 lh-copy">{businessInfo.street}</p>
-                <p className="f6  mv0 lh-copy mb2-l">
+                <p className="f5  mv0 lh-copy">{businessInfo.street}</p>
+                <p className="f5  mv0 lh-copy">
                   {businessInfo.city}, {businessInfo.state}{" "}{businessInfo.zip}
                 </p>
-                <p className="f6  mv0 lh-copy mb2-l">{businessInfo.phone}</p>
-                <p className="f6  mv0 lh-copy">{businessInfo.website}</p>
+                <p className="f5  mv0 lh-copy">{businessInfo.phone}</p>
+                <p className="f5  mv0 lh-copy">{businessInfo.website}</p>
               </div>
             </div>
           </div>
-       
   );
 };
 

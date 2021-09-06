@@ -35,7 +35,7 @@ const BusinessSettings = ({ toggleDetails }) => {
   return (
     <div>
       <Navigation />
-    <div className=" bg-white-90">
+    <div className="bg-white-90 mh6 pa4">
       <BusinessCard />
       <CardContent
         style={{
@@ -72,9 +72,9 @@ const BusinessSettings = ({ toggleDetails }) => {
         style={{ marginRight:325}}>
           <button
             type="button"
-            className="btn btn-info button-format pointer"
+            className="btn grow f5 pa2 btn-info button-format pointer"
           >
-            <Link style={{ color: "white" }} to="/dashboard">
+            <Link style={{ color: "white", textDecoration:"none"}} to="/dashboard">
               Save Changes
             </Link>
           </button>

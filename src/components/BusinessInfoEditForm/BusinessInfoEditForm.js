@@ -49,7 +49,7 @@ const BusinessInfoEditForm = () => {
         Business Name
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="text"
         value={business.businessName}
         onChange={handleTextChange}
@@ -62,7 +62,7 @@ const BusinessInfoEditForm = () => {
         Street Address
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="text"
         value={business.streetAddress}
         onChange={handleTextChange}
@@ -75,7 +75,7 @@ const BusinessInfoEditForm = () => {
         City
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="text"
         value={business.city}
         onChange={handleTextChange}
@@ -88,7 +88,7 @@ const BusinessInfoEditForm = () => {
         State
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="text"
         value={business.state}
         onChange={handleTextChange}
@@ -101,7 +101,7 @@ const BusinessInfoEditForm = () => {
         Zip Code
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="number"
         id="zipcode"
         value={business.zipcode}
@@ -115,7 +115,7 @@ const BusinessInfoEditForm = () => {
         Website
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="text"
         value={business.website}
         onChange={handleTextChange}
@@ -128,7 +128,7 @@ const BusinessInfoEditForm = () => {
         Business Phone Number
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="tel"
         id="businessPhone"
         name="businessPhone"
@@ -142,7 +142,7 @@ const BusinessInfoEditForm = () => {
         Max Occupancy
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="number"
         id="maxOccupancy"
         value={business.maxOccupancy}
@@ -159,7 +159,7 @@ const BusinessInfoEditForm = () => {
         Allowed Occupancy Restriction
       </label>
       <input
-        className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+        className="pa2 input-reset ba bg-transparent w-100 f4"
         type="number"
         id="allowedOccupancyRestriction"
         value={business.allowedOccupancyRestriction}
@@ -172,9 +172,9 @@ const BusinessInfoEditForm = () => {
       <div className="flex justify-end">
         <button
           type="submit"
-          className="btn btn-info button-format pointer mr0"
+          className="pa2 btn btn-info button-format pointer mr0"
         >
-          <Link className="white" to="/dashboard">Update Business Information</Link>
+          <Link className="f4 no-underline white" to="/dashboard">Update Business Information</Link>
         </button>
       </div>
     </form>

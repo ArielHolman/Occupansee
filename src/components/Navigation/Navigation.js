@@ -2,7 +2,7 @@ import React from "react";
 import Logo from "../Logo/Logo";
 import { Link } from "react-router-dom";
 import cookie from "cookie";
-import { CenterFocusStrong } from "@material-ui/icons";
+// import { CenterFocusStrong } from "@material-ui/icons";
 
 const Navigation = () => {
   const cookies = cookie.parse(document.cookie);
@@ -38,7 +38,7 @@ const Navigation = () => {
           <Link to="/">
             <button
               type="button"
-              className="btn btn-info button-format items-center"
+              className="btn f5 pa2 grow btn-info button-format items-center"
             >
               {" "}
               🔍 Search{" "}
@@ -47,7 +47,7 @@ const Navigation = () => {
           <Link to="/dashboard">
             <button
               type="button"
-              className="btn btn-info button-format items-center"
+              className="btn f5 pa2 grow btn-info button-format items-center"
             >
               {" "}
               Dashboard{" "}
@@ -56,7 +56,7 @@ const Navigation = () => {
           <Link to="/">
             <button
               type="button"
-              className="btn btn-info button-format"
+              className="btn f5 pa2 grow btn-info button-format"
               onClick={() => {
                 document.cookie = "loggedIn=";
               }}

@@ -10,14 +10,12 @@ const BusinessProfile = () => {
   return (
     <div>
       <Navigation />
-    <div className="business-profile" >
+    <div className="ma5" >
       <div style={{
           display: "flex",
           flexDirection: "row",
           justifyContent: "center",
           alignItems: "center",
-          margin:2,
-          paddingBottom:25,
         }}>
         <ProfileCard />
         <ProfileImage />
@@ -26,9 +24,8 @@ const BusinessProfile = () => {
         style={{
           display: "flex",
           flexDirection: "row",
-          justifyContent: "space-evenly",
+          justifyContent: "center",
           alignItems: "center",
-          margin: 2,
           paddingBottom:25,
         }}
       >

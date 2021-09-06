@@ -71,13 +71,12 @@ const Signin = () => {
             style={{ textAlign: "left" }}
           >
             <legend className="f4 fw6 ph0 mh0 center">Sign In</legend>
-            <p> Please sign in below. </p>
             <div className="mt3">
-              <label className="db fw6 lh-copy f6" htmlFor="email-address">
+              <label className="db fw6 lh-copy f5" htmlFor="email-address">
                 Email
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+                className="pa2 input-reset ba bg-transparent w-100 f4"
                 type="email"
                 onChange={handleTextChange}
                 name="email-address"
@@ -86,11 +85,11 @@ const Signin = () => {
               />
             </div>
             <div className="mv3">
-              <label className="db fw6 lh-copy f6" htmlFor="password">
+              <label className="db fw6 lh-copy f5" htmlFor="password">
                 Password
               </label>
               <input
-                className="pa2 input-reset ba bg-transparent hover-bg-black w-100"
+                className="pa2 input-reset ba bg-transparent w-100 f4"
                 type="password"
                 name="password"
                 id="password"
@@ -101,15 +100,15 @@ const Signin = () => {
           </fieldset>
           <div>
             <button
-              className="b grow pointer btn btn-info f6 button-format center"
+              className="b grow pointer btn btn-info f5 pa2 button-format center"
               type="submit"
             >
               Sign In
             </button>
           </div>
           <div className="lh-copy mt3">
-            <div className="f6 link dim gold db pointer register-link">
-              <Link to="/register-business-owner">Register today!</Link>
+            <div className="f5 link db pointer register-link">
+              <Link className="register-link" to="/register-business-owner">Register today!</Link>
             </div>
           </div>
         </div>

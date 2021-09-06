@@ -24,8 +24,8 @@ const BusinessTracker = () => {
   return (
     <div>
       <Navigation />
-    <div className="biz-tracker flex justify-center items-center flex-column mh7 mv2 bg-white-90" style={{marginLeft:460}}>
-      <section className="textview pa1 mr2 h3 center items-center b outline">
+    <div className="mv5-ns biz-tracker flex center flex-column bg-white-90">
+      <section className="textview pa1 h3 center items-center b outline">
         {total}
       </section>
       <section className="center">

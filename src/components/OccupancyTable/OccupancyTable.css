@@ -1,8 +1,8 @@
 .occupancy-title {
   margin-bottom: 0px;
   padding-bottom: 20px;
-  max-width: 100px;
-  text-align: center;
+  /* max-width: 100px; */
+  text-align: left;
 }
 
 .occupancy-nums {
@@ -21,16 +21,9 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  margin: 0px 100px;
-  padding:20px;
   width:5rem;
 }
 
-.occupancy-table-container{
-  width:6rem;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  margin-right: 30px;
-}
+/* .occupancy-table-container{
+  margin-left: 13rem;
+} */

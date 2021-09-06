@@ -20,6 +20,7 @@
   position: relative;
   margin: 5px;
   font-weight: 900;
+  margin-right:14rem;
 }
 .chart__figure {
   display: flex;
@@ -60,7 +61,7 @@
 }
 .chart__value p {
   font-size: 100px;
-  margin: 110px 35px;
+  margin: 170px 75px;
   padding-left: 6px;
   font-family: "Barlow Condensed", sans-serif;
   color: #01713c;

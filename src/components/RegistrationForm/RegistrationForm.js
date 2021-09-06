@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Redirect } from "react-router-dom";
 
-const BusinessOwnerInfoForm = () => {
+const RegistrationForm = () => {
   const [businessOwner, setBusinessOwner] = useState({
     firstName: "",
     lastName: "",
@@ -52,20 +52,22 @@ const BusinessOwnerInfoForm = () => {
         First Name
       </label>
       <input
-        className="pa2 f4 input-reset ba bg-transparent w-100"
+        className="pa2 input-reset ba bg-transparent w-100"
+        required
         type="text"
         name="firstName"
         id="firstName"
         value={businessOwner.firstName}
         onChange={handleTextChange}
         placeholder="First Name"
-        style={{ marginBottom: 15 }}
+        style={{ marginBottom: 15}}
       />
       <label className="db fw6 lh-copy f6" htmlFor="lastname">
         Last Name
       </label>
       <input
-        className="pa2 f4 input-reset ba bg-transparent w-100"
+        className="pa2 input-reset ba bg-transparent w-100"
+        required
         type="text"
         name="lastName"
         id="lastName"
@@ -78,7 +80,8 @@ const BusinessOwnerInfoForm = () => {
         Phone Number
       </label>
       <input
-        className="pa2 f4 input-reset ba bg-transparent w-100"
+        className="pa2 input-reset ba bg-transparent w-100"
+        required
         type="tel"
         id="businessOwnerPhone"
         name="businessOwnerPhone"
@@ -92,7 +95,8 @@ const BusinessOwnerInfoForm = () => {
         Email
       </label>
       <input
-        className="pa2 f4 input-reset ba bg-transparent w-100"
+        className="pa2 input-reset ba bg-transparent w-100"
+        required
         type="email"
         name="email"
         id="email"
@@ -105,7 +109,8 @@ const BusinessOwnerInfoForm = () => {
         Password
       </label>
       <input
-        className=" pa2 f4 input-reset ba bg-transparent w-100"
+        className=" pa2 input-reset ba bg-transparent w-100"
+        required
         type="password"
         name="password"
         id="password"
@@ -117,13 +122,13 @@ const BusinessOwnerInfoForm = () => {
       <div className="flex justify-end">
         <button
           type="submit"
-          className="btn f4 pa2 btn-info button-format pointer mr0"
+          className="btn btn-info button-format pointer mr0 form-submit-btn"
         >
-          Enter Business Information
+          Continue
         </button>
       </div>
     </form>
   );
 };
 
-export default BusinessOwnerInfoForm;
+export default RegistrationForm;

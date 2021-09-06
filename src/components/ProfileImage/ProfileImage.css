@@ -1,6 +1,6 @@
 .profile-pic {
   width: 100%;
-  height: 8rem;
+  height: 10rem;
   display: block;
 }
 
@@ -23,7 +23,7 @@ img {
 .p-image {
   top: 167px;
   right: 30px;
-  color: #666666;
+  /* color: #666666; */
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
   margin:0rem 4rem;
 }
@@ -32,12 +32,3 @@ img {
   transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
 
-/* .upload-button {
-  font-size: 1.2em;
-  padding: 1rem;
-}
-
-.upload-button:hover {
-  transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-  color: #999;
-} */

@@ -46,34 +46,29 @@ const Dashboard = () => {
     <div>
       <Navigation />
       <div
-        className="dashboard bg-white-90 mh6 "
+        className="mb5 mv5"
         style={{
           display: "flex",
           flexDirection: "column",
           alignItems: "center",
         }}
       >
-        <div className="flex flex-column justify-start w-75">
-          <h2 className="f3">Hello {businessOwner.firstName},</h2>
-          <p>
-            Keep your customers up to date by tracking your occupancy at the
+        <div className="w-60">
+          <p className="ma0 f3 w-60 mh5">Hello {businessOwner.firstName},</p>
+          <p className="f4 mh5">
+            Keep your customers up to date by tracking the business occupancy at the
             door!
           </p>
         </div>
-        <section className="mw7 avenir pb2">
-          <BusinessCard />
+        <section className="mw8">
+          <BusinessCard className="center"/>
           <div
-            className="pt2"
-            style={{
-              display: "flex",
-              justifyContent: "center",
-              flexWrap: "wrap",
-            }}
+            className="pt2 flex mh6-ns center flex-wrap settings-buttons"
           >
-            <Link to="/edit">
+            <Link to="/edit" className="no-underline">
               <DashboardButton buttonInfo={editButton} />
             </Link>
-            <Link to="/tracker">
+            <Link to="/tracker" className="no-underline">
               <DashboardButton buttonInfo={trackerButton} />
             </Link>
             <Link
@@ -82,6 +77,7 @@ const Dashboard = () => {
                 toggleDetails,
                 pathname: "/settings",
               })}
+              className="no-underline"
             >
               <DashboardButton buttonInfo={settingsButton} />
             </Link>
@@ -90,6 +86,7 @@ const Dashboard = () => {
                 ...location,
                 pathname: "/profile",
               })}
+              className="no-underline"
             >
               <DashboardButton buttonInfo={profileButton} />
             </Link>
