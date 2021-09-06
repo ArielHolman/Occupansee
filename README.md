@@ -2,7 +2,6 @@
 
 An app to help you see the current occupancy of your favorite stores before heading out the door. 
 
-
 ## Setup
 npm i
 npm run start
