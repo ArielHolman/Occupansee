@@ -5,7 +5,7 @@ const DashboardButton = ({buttonInfo, handler}) => {
   return (
     <button
       className="center bg-white pa1-ns mv2 ba b--black-10 grow pointer shadow-3"
-      style={{ width: 200 , legnth: 100, marginLeft:100, marginRight:100}}
+      style={{ width: 200 , height: 200 ,legnth: 100, marginLeft:100, marginRight:100}}
     >
       <div className="tc">
         <img

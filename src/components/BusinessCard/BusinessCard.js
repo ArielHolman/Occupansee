@@ -18,23 +18,22 @@ const BusinessCard = () => {
           <div className="flex flex-row-ns">
             <div className="w-60 mh5">
               <h1
-                className="f2"
-                style={{ marginBottom: 0 }}
+                style={{ marginBottom: 0, fontSize:52, marginTop: 1}}
               >
                 {businessInfo.businessname}
               </h1>
-              <p className="f4  mv0 lh-copy" style={{ margin: 6 }}>
+              <p className="mv0 lh-copy" style={{ margin: 6, fontSize:30}}>
                 {businessInfo.city}, {businessInfo.state}
               </p>
               <div
                 className="v-btm"
                 style={{ display: "flex", alignItems: "baseline" }}
               >
-                <p className="lh-copy f3-l fw6" style={{ margin: 3 }}>
+                <p className="lh-copy fw6" style={{ margin: 3, fontSize:30 }}>
                   {businessInfo.maxoccupancy}
                 </p>
               </div>
-              <p className="f4" style={{ margin: 0, paddingRight: 4 }}>
+              <p style={{ margin: 0, fontSize:30 }}>
                 Max Occupancy
               </p>
             </div>

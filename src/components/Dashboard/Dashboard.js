@@ -54,8 +54,8 @@ const Dashboard = () => {
         }}
       >
         <div className="w-60">
-          <p className="ma0 f3 w-60 mh5">Hello {businessOwner.firstName},</p>
-          <p className="f4 mh5">
+          <p className="ma0 w-60 mh5" style={{fontSize:40 }}>Hello {businessOwner.firstName},</p>
+          <p className="mh5" style={{fontSize:30 }}>
             Keep your customers up to date by tracking the business occupancy at the
             door!
           </p>
