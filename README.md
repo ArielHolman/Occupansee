@@ -29,5 +29,4 @@ Developer and Designer:
 Ariel Holman: <a href="https://www.linkedin.com/in/ariel-holman/">LinkedIn</a> - <a href="https://github.com/ArielHolman">GitHub</a>
 
 Figma:
-
 https://www.figma.com/file/TSyd2fzQbauIfk9yA6s5or/Occupansee-1?node-id=1%3A1111
