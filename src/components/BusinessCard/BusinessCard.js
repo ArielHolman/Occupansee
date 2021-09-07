@@ -14,11 +14,11 @@ const BusinessCard = () => {
       }}
     >
       <section className="m8 avenir biz-card">
-        <article className="bt bb b--black-10 pv2 ph5">
+        <article className="bt bb b--black-10 pv2">
           <div className="flex flex-row-ns">
             <div className="w-60 mh5">
               <h1
-                style={{ marginBottom: 0, fontSize:52, marginTop: 1}}
+                style={{ marginBottom: 0, fontSize:42, marginTop: 1}}
               >
                 {businessInfo.businessname}
               </h1>
