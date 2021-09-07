@@ -60,7 +60,7 @@ const Dashboard = () => {
             door!
           </p>
         </div>
-        <section className="mw8">
+        <section className="w-60">
           <BusinessCard className="center"/>
           <div
             className="pt2 flex mh6-ns center flex-wrap settings-buttons"
